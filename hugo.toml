@@ -1,0 +1,6 @@
+baseURL = 'https://example.org/'
+languageCode = 'zh-Hans'
+title = '清水阁'
+theme = 'PaperMod'
+defaultContentLanguage = "zh"
+hasCJKLanguage = true

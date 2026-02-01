@@ -1,0 +1,19 @@
+backend:
+  name: git
+  repo: "/var/lib/gitea/data/gitea-repositories/xianliticn/qingshuige-hugo.git"
+  branch: main
+  auth_type: token
+  token: "94e6d08b325a713f9b3942d83539ec9f30b510b5"
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }

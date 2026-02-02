@@ -31,5 +31,5 @@ jobs:
         run: |
           cd repo
           TARGET_DIR=/www/wwwroot/qingshuige.ink
-          sudo mkdir -p $TARGET_DIR
-          sudo rsync -av --delete public/ $TARGET_DIR/
+          sudo -n mkdir -p $TARGET_DIR
+          sudo -n rsync -av --delete public/ $TARGET_DIR/

@@ -11,7 +11,9 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: gitea/checkout@v4
+        run: |
+          git clone ${GITEA_REPOSITORY_URL} repo
+          cd repo
 
       - name: Install Hugo
         run: |

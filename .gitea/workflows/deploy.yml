@@ -14,6 +14,7 @@ jobs:
         run: |
           git clone https://gitea.qingshuige.ink/qingshuige-authors/qingshuige-hugo.git repo
           cd repo
+          ls
           git checkout main
 
       - name: Test Hugo

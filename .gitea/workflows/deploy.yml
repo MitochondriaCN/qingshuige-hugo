@@ -14,7 +14,10 @@ jobs:
         run: |
           git clone https://gitea.qingshuige.ink/qingshuige-authors/qingshuige-hugo.git repo
           cd repo
+          echo "Listing repo directory:"
           ls
+          echo "Listing themes directory:"
+          ls themes/
           git checkout main
 
       - name: Test Hugo

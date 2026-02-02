@@ -12,9 +12,9 @@ jobs:
     steps:
       - name: Checkout source
         run: |
-          git clone $GITEA_SERVER_URL/$GITHUB_REPOSITORY.git repo
+          git clone https://gitea.qingshuige.ink/qingshuige-authors/qingshuige-hugo.git repo
           cd repo
-          git checkout $GITHUB_SHA
+          git checkout main
 
       - name: Test Hugo
         run: |

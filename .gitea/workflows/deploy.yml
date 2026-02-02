@@ -12,7 +12,8 @@ jobs:
     steps:
       - name: Checkout source
         run: |
-          git clone $GITEA_SERVER_URL/$GITHUB_REPOSITORY.git .
+          git clone $GITEA_SERVER_URL/$GITHUB_REPOSITORY.git repo
+          cd repo
           git checkout $GITHUB_SHA
 
       - name: Test Hugo

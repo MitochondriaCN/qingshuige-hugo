@@ -13,6 +13,7 @@ jobs:
       - name: Checkout source
         run: |
           git clone https://gitea.qingshuige.ink/qingshuige-authors/qingshuige-hugo.git repo
+          chmod -R 777 .
           cd repo
           echo "Listing repo directory:"
           ls

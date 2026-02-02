@@ -23,6 +23,7 @@ jobs:
 
       - name: Build Hugo site
         run: |
+          cd repo
           ls -R
           hugo --minify
 

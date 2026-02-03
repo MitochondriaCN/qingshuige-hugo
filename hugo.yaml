@@ -9,6 +9,7 @@ params:
   assets:
     favicon: "/favicon.png"
     favicon16x16: "/favicon.png"
+    favicon32x32: "/favicon.png"
 
   homeInfoParams:
     Title: 清水阁

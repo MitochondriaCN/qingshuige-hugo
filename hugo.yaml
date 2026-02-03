@@ -18,5 +18,5 @@ menu:
   main:
     - identifier: write
       name: 撰写
-      pageRef: /admin
+      url: /admin
       weight: 10

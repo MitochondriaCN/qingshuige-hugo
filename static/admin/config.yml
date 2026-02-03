@@ -1,9 +1,11 @@
 backend:
-  name: git
-  repo: "/var/lib/gitea/data/gitea-repositories/xianliticn/qingshuige-hugo.git"
+  name: gitea
+  repo: qingshuige-authors/qingshuige-hugo
+  app_id: gto_mrgjwmoh2p4f6bkcgm6wbn2ckp3s5utf4t43b3ujpmvgkp4nmhja
+  api_root: "https://gitea.qingshuige.ink/api/v1/"
+  base_url: "https://gitea.qingshuige.ink/"
+  auth_endpoint: "https://gitea.qingshuige.ink/login/oauth/authorize"
   branch: main
-  auth_type: token
-  token: "94e6d08b325a713f9b3942d83539ec9f30b510b5"
 media_folder: "static/uploads"
 public_folder: "/uploads"
 

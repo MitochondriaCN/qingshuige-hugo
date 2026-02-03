@@ -18,5 +18,11 @@ collections:
     fields:
       - { label: "标题", name: "title", widget: "string" }
       - { label: "日期", name: "date", widget: "datetime" }
-      - { label: "作者", name: "author", widget: "string", default: "佚名" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "作者",
+          name: "author",
+          widget: "select",
+          options: ["线粒体", "南木", "刁钻神", "猕猴桃教教主"],
+          default: "线粒体"
+        }
+      - { label: "正文", name: "body", widget: "markdown" }

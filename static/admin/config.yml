@@ -1,7 +1,7 @@
 backend:
   name: gitea
   repo: qingshuige-authors/qingshuige-hugo
-  app_id: gto_mrgjwmoh2p4f6bkcgm6wbn2ckp3s5utf4t43b3ujpmvgkp4nmhja
+  app_id: 2ad8d5ac-e736-42a8-8913-8d91d019397a
   api_root: "https://gitea.qingshuige.ink/api/v1/"
   base_url: "https://gitea.qingshuige.ink/"
   auth_endpoint: "https://gitea.qingshuige.ink/login/oauth/authorize"

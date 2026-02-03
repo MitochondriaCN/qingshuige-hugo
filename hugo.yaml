@@ -14,6 +14,7 @@ params:
   defaultTheme: auto
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
+  ShowPostNavLinks: true
 
 menu:
   main:

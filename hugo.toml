@@ -1,6 +1,0 @@
-baseURL = 'https://qingshuige.ink/'
-languageCode = 'zh-Hans'
-title = '清水阁'
-theme = 'PaperMod'
-defaultContentLanguage = "zh"
-hasCJKLanguage = true

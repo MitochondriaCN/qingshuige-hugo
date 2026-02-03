@@ -6,6 +6,7 @@ defaultContentLanguage: "zh"
 hasCJKLanguage: true
 
 params:
+  favicon: "/favicon.ico"
   homeInfoParams:
     Title: 清水阁
     Content: 后之览者，亦将有感于斯文

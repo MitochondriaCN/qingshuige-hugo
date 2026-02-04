@@ -19,6 +19,7 @@ params:
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
   ShowPostNavLinks: true
+  math: true
 
 menu:
   main:

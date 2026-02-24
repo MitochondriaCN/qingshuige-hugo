@@ -22,7 +22,15 @@ collections:
           label: "作者",
           name: "author",
           widget: "select",
-          options: ["线粒体", "南木", "刁钻神", "猕猴桃教教主", "aspaticopia"],
+          options:
+            [
+              "线粒体",
+              "南木",
+              "刁钻神",
+              "猕猴桃教教主",
+              "aspaticopia",
+              "文默居士",
+            ],
           default: "线粒体",
         }
       - { label: "正文", name: "body", widget: "markdown" }

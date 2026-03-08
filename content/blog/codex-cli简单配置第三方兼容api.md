@@ -93,7 +93,7 @@ env_key = "CUSTOM_OPENAI_API_KEY"
 > 
 > ```json
 > {
-> "OPENAI_API_KEY": "apikey-xxxxxx"
+>   "OPENAI_API_KEY": "apikey-xxxxxx"
 > }
 > ```
 > 

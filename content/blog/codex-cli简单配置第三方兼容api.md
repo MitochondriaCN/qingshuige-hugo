@@ -9,7 +9,6 @@ Codex CLI是OpenAI推出的AI编程Agent工具，类似Claude Code。据说它�
 
 最近我有幸用到了大佬的Codex中转站，故在此将我配置Codex CLI的经验作一分享。
 
-> [!NOTE]
 > 本文所用环境是Windows和Windows PowerShell，Linux可以参考适用，大同小异。
 
 ## 安装
@@ -86,7 +85,6 @@ env_key = "CUSTOM_OPENAI_API_KEY"
 
 这行配置的意思是，CLI要去这个环境变量里找API Key。所以需要修改环境变量。对于Windows 11，打开系统设置—系统信息—高级系统设置—环境变量，然后添加一个用户变量，名为刚才定义的名字，值为第三方API提供的API Key。
 
-> [!NOTE]
 > 有些人认为配置环境变量很麻烦，所以在此也有第二种方法。
 > 
 > 首先，删去`env_key`字段。当一个`model_provider`没有配置`env_key`的时候，CLI就会去读取和`config.toml`同目录的`auth.json`，来获取API Key。

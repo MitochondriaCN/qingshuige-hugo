@@ -16,8 +16,6 @@ params:
     Content: |
       后之览者，亦将有感于斯文
 
-      公告：由于旧框架性能不佳，清水阁目前正在进行重构，将尽快迁移以前的内容。
-
   defaultTheme: auto
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true

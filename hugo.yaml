@@ -23,10 +23,3 @@ params:
   UseHugoToc: true
   ShowPostNavLinks: true
   math: true
-
-menu:
-  main:
-    - identifier: write
-      name: 撰写
-      url: /admin
-      weight: 10

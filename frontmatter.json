@@ -1,0 +1,44 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "标题",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "发布日期",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "是否为草稿",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "作者",
+          "name": "author",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "hugo",
+  "frontMatter.content.publicFolder": "static",
+  "frontMatter.preview.host": "http://localhost:1313",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blog",
+      "path": "[[workspace]]/content/blog"
+    }
+  ],
+  "frontMatter.git.enabled": true
+}

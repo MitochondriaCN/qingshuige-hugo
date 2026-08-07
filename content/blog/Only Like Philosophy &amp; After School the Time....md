@@ -4,21 +4,22 @@ date: 2025-11-24T02:44:43.000+08:00
 author: 线粒体
 ---
 https://open.spotify.com/track/13vVqIodooZ2V1JcEcvjgM?si=c98d91114d4e45ea
+
 虽然我不喜欢梗曲，但是我还是要感谢“苦命鸳鸯”这个梗，让我听到了椎名林檎的《17》。在她颇具个性的唱腔中，我仿佛听到了自己的17岁。实际上和她所唱的并没有太多区别。好吧，这也可以算作是一种“往日种种”。不过只好允许自己在这里煽一个肉麻的情。有人说人们总是喜欢将自己的过去美化，然而我的过去本来也没有美化的必要，因为它算不上美好，也就谈不上怀念。但是能从别人的歌曲中听到和自己类似的故事，多少还是会产生一些共鸣。况且这首歌这么小众，也是一件很不容易的事。
 
 她唱道：
 
-Only like philosophy & after school the time
-
-That's what I call my own time
+> Only like philosophy & after school the time
+>
+> That's what I call my own time
 
 So do I. 那个时候是高中。我在学校所扮演的角色其实非常标签化，可以类比动画和漫画中那种坐在后排靠窗的男主，话很少，整天看起来很深沉的样子。实际上我就是这样一个边缘角色。因为我在高中期间发生的鬼扯事情实在是太多了，而且很大一部分是我自己造成的。现在这样说起来好像无关痛痒，但是对于一个17岁的人来说，犹如7岁的小学生上学没戴红领巾、27岁的大学生写不出博士论文。再加上我的性格本身内向又叛逆，所以就出现了这种写进歌里很浪漫，实际感受很抑郁的状况。
 
 Philosophy，我们就引申成所有能放纵自己思考的课吧。那时候我认为是语文、物理、生物和理科班期间的历史。为什么是理科班的历史？因为后来转去文科班，历史就成了成绩的重要部分。这时候我不得不说，学习真正快乐的时候是没有功利目的的时候。其他的课上，老师对我其实格外“关照”，就像她唱道：
 
-Teachers, they're so young
-
-Singling me out
+> Teachers, they're so young
+>
+> Singling me out
 
 而这三门课的老师，教学风格比较宽松。所以我可以真真正正放下一整天的提心吊胆，听听牛爵爷是怎么展示世界体系的框架，孟德尔是怎么发现$9:3:3:1$，孔乙己是怎么排出九文大钱，拿破仑是怎么征服欧洲。子曰：学而时习之，不亦说乎？在这些课上，我才切实体会到了这句话的含义。
 
@@ -30,9 +31,9 @@ Singling me out
 
 这是我真正自己的时间，什么宿管、规定是干涉不了的。是啊，在学校里遭受了一整天不公平的待遇，难道连享有这么一点free time的机会都没有吗？固然很多人遵循了规定，放弃了自己的个性，埋首做题，最终考上了一个比我好得多的学校，也可能拥有一个比我精彩得多的人生。但我的人生的第一信条就是凡事都由自己做主，自己承担风险，而不是依靠一些传统的约定俗成的effective ways去实现一些东西。所以她唱道：
 
-I see the same faces in school & they say that I am different
-
-I think it's an honour
+> I see the same faces in school & they say that I am different
+>
+> I think it's an honour
 
 然而我最终用于高考的大部分知识，都来自于这些own time的自学。这可能听起来很讽刺，但是这是事实。如果你把我按头在教室里刷题，那我会感到非常痛苦。但是一旦有了自己的时间，就能够最大化开动大脑学习，不拘一格地学习。在高考前最后三个月的时间里，我学到的恐怕比之前高中三年的总和还要多。所以即便从功利主义的角度来看，我觉得这照样不失为一种honour。
 
@@ -40,13 +41,13 @@ I think it's an honour
 
 然而叛逆只是这首歌的一个侧面，为什么会叛逆？因为孤独。她唱道：
 
-Nice girls meet nice boys end of school day
-
-While other girls go straight home
-
-Talking 'bout soaps 'n' that
-
-I go home alone
+> Nice girls meet nice boys end of school day
+>
+> While other girls go straight home
+>
+> Talking 'bout soaps 'n' that
+>
+> I go home alone
 
 唉唉，显然我不是那种nice boy，过不了那种现充生活。坦诚地说，我高中期间不能说没有朋友，但朋友真的很少。除了几位从初中“继承”来的老朋友，几乎没有认识新朋友。男生之间可能不太讨论soaps，但是我和他们讨论games的机会也很少。当然也有人会说：17岁的人懂什么孤独？可能我确实不懂，但绝对不是寂寞，并不是说来几个人捧着我、和我每天闲聊，我就会好受。叛逆能带给你的除了自由，还有孤独。孤独二字贯穿了我的整个童年。
 

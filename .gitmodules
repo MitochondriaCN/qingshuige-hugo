@@ -1,0 +1,3 @@
+[submodule "themes/qingshuige-theme"]
+	path = themes/qingshuige-theme
+	url = https://github.com/nanmuweyyyyyy/qingshuige-theme.git

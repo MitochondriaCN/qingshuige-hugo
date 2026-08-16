@@ -6,6 +6,9 @@ defaultContentLanguage: "zh"
 hasCJKLanguage: true
 
 params:
+  author:
+    name: "清水阁"
+
   assets:
     favicon: "/favicon.png"
     favicon16x16: "/favicon.png"

@@ -1,5 +1,6 @@
 ---
 title: Only Like Philosophy & After School the Time...
+slug: only-like-philosophy-after-school-the-time
 date: 2025-11-24T02:44:43.000+08:00
 author: 线粒体
 ---

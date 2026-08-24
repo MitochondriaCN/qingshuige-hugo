@@ -1,7 +1,7 @@
 ---
 title: 实习有感
 date: 2026-08-24T11:33:50.783Z
-draft: true
+draft: false
 author: 线粒体
 ---
 

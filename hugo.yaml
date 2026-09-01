@@ -5,6 +5,12 @@ theme: "PaperMod"
 defaultContentLanguage: "zh"
 hasCJKLanguage: true
 
+menu:
+  main:
+    - name: "年鉴2025"
+      url: "/files/qingshuige-annual-2025.pdf"
+      weight: 10
+
 params:
   author:
     name: "清水阁"

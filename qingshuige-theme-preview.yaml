@@ -1,0 +1,57 @@
+# qingshuige-theme 本地预览覆盖配置
+#
+# 将此文件放到 qingshuige-hugo 根目录后，可在不修改现有 hugo.yaml
+# （仍保持 PaperMod 为正式主题）的情况下预览 qingshuige-theme：
+#
+#   hugo server -D --config "hugo.yaml,qingshuige-theme-preview.yaml"
+#
+# Hugo 会按从左到右的优先级合并配置；本文件只提供新主题预览所需项目。
+
+theme: qingshuige-theme
+
+params:
+  qingshuige:
+    logo: "/favicon.png"
+
+    avatar: "/qingshuige/defaults/avatar.png"
+  
+
+menus:
+  main:
+    - identifier: categories
+      name: "文章分类"
+      weight: 10
+
+    - identifier: all_articles
+      name: "全部文章"
+      pageRef: "/blog"
+      parent: categories
+      weight: 10
+
+    # 目前主站还没有“撰文指南”内容页，因此先作为待开发交互项显示。
+    - identifier: writing_guide
+      name: "撰文指南"
+      weight: 20
+      params:
+        placeholder: true
+
+    - identifier: site_preface
+      name: "建站弁言"
+      pageRef: "/blog/建站弁言"
+      weight: 30
+
+    # 在当前压缩包中没有发现“年鉴2025”的目标内容页/URL，先保留菜单位。
+    - identifier: almanac_2025
+      name: "年鉴2025"
+      weight: 40
+      params:
+        placeholder: true
+
+    # 个人主页用头像代替文字。等目标地址确定后，删除 placeholder，
+    # 并添加 pageRef（站内页面）或 url（站外个人主页）。
+    - identifier: profile
+      name: "个人主页"
+      weight: 50
+      params:
+        avatar: true
+        placeholder: true

@@ -40,12 +40,10 @@ menus:
       pageRef: "/blog/建站弁言"
       weight: 30
 
-    # 在当前压缩包中没有发现“年鉴2025”的目标内容页/URL，先保留菜单位。
     - identifier: almanac_2025
       name: "年鉴2025"
+      pageRef: "/almanac/2025"
       weight: 40
-      params:
-        placeholder: true
 
     # 个人主页用头像代替文字。等目标地址确定后，删除 placeholder，
     # 并添加 pageRef（站内页面）或 url（站外个人主页）。

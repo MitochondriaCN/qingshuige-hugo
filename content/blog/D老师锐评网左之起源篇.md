@@ -2,6 +2,7 @@
 title: D老师锐评网左之起源篇
 date: 2025-02-26T09:49:24.000+08:00
 author: NukeCirno
+categories: 学
 ---
 ***一、动力机制：压抑感的多重转化***
 

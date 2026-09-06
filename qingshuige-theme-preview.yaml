@@ -34,7 +34,7 @@ menus:
     # 诗
      - identifier: category_poetry
        name: "诗"
-       pageRef: "/blog/诗"
+       pageRef: "/categories/诗"
        parent: categories
        weight: 20
 
@@ -42,7 +42,7 @@ menus:
     # 文
      - identifier: category_prose
        name: "文"
-       pageRef: "/blog/文"
+       pageRef: "/categories/文"
        parent: categories
        weight: 30
 
@@ -50,15 +50,15 @@ menus:
     # 艺
      - identifier: category_art
        name: "艺"
-       pageRef: "/blog/艺"
+       pageRef: "/categories/艺"
        parent: categories
        weight: 40
 
 
     # 科
      - identifier: category_science
-       name: "科"
-       pageRef: "/blog/科"
+       name: "学"
+       pageRef: "/categories/学"
        parent: categories
        weight: 50
 
@@ -66,7 +66,7 @@ menus:
     # 其他
      - identifier: category_other
        name: "其他"
-       pageRef: "/blog/其他"
+       pageRef: "/categories/其他"
        parent: categories
        weight: 60
 
@@ -79,12 +79,12 @@ menus:
 
      - identifier: site_preface
        name: "建站弁言"
-       pageRef: "/blog/建站弁言"
+       pageRef: "/categories/建站弁言"
        weight: 30
 
      - identifier: almanac_2025
        name: "年鉴2025"
-       pageRef: "/almanac/2025"
+       pageRef: "/categories/年鉴2025"
        weight: 40
 
     # 个人主页用头像代替文字。等目标地址确定后，删除 placeholder，

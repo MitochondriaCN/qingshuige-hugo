@@ -18,38 +18,80 @@ params:
 
 menus:
   main:
-    - identifier: categories
-      name: "文章分类"
-      weight: 10
+     - identifier: categories
+       name: "文章分类"
+       weight: 10
 
-    - identifier: all_articles
-      name: "全部文章"
-      pageRef: "/blog"
-      parent: categories
-      weight: 10
+
+    # 全部文章
+     - identifier: all_articles
+       name: "全部文章"
+       pageRef: "/blog"
+       parent: categories
+       weight: 10
+
+
+    # 诗
+     - identifier: category_poetry
+       name: "诗"
+       pageRef: "/blog/诗"
+       parent: categories
+       weight: 20
+
+
+    # 文
+     - identifier: category_prose
+       name: "文"
+       pageRef: "/blog/文"
+       parent: categories
+       weight: 30
+
+
+    # 艺
+     - identifier: category_art
+       name: "艺"
+       pageRef: "/blog/艺"
+       parent: categories
+       weight: 40
+
+
+    # 科
+     - identifier: category_science
+       name: "科"
+       pageRef: "/blog/科"
+       parent: categories
+       weight: 50
+
+
+    # 其他
+     - identifier: category_other
+       name: "其他"
+       pageRef: "/blog/其他"
+       parent: categories
+       weight: 60
 
     # 目前主站还没有“撰文指南”内容页，因此先作为待开发交互项显示。
-    - identifier: writing_guide
-      name: "撰文指南"
-      weight: 20
-      params:
+     - identifier: writing_guide
+       name: "撰文指南"
+       weight: 20
+       params:
         placeholder: true
 
-    - identifier: site_preface
-      name: "建站弁言"
-      pageRef: "/blog/建站弁言"
-      weight: 30
+     - identifier: site_preface
+       name: "建站弁言"
+       pageRef: "/blog/建站弁言"
+       weight: 30
 
-    - identifier: almanac_2025
-      name: "年鉴2025"
-      pageRef: "/almanac/2025"
-      weight: 40
+     - identifier: almanac_2025
+       name: "年鉴2025"
+       pageRef: "/almanac/2025"
+       weight: 40
 
     # 个人主页用头像代替文字。等目标地址确定后，删除 placeholder，
     # 并添加 pageRef（站内页面）或 url（站外个人主页）。
-    - identifier: profile
-      name: "个人主页"
-      weight: 50
-      params:
+     - identifier: profile
+       name: "个人主页"
+       weight: 50
+       params:
         avatar: true
         placeholder: true

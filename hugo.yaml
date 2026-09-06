@@ -7,6 +7,21 @@ hasCJKLanguage: true
 
 menu:
   main:
+    - name: "文"
+      url: "/categories/文/"
+      weight: 1
+    - name: "诗"
+      url: "/categories/诗/"
+      weight: 2
+    - name: "艺"
+      url: "/categories/艺/"
+      weight: 3
+    - name: "学"
+      url: "/categories/学/"
+      weight: 4
+    - name: "其他"
+      url: "/categories/其他/"
+      weight: 5
     - name: "年鉴2025"
       url: "/files/qingshuige-annual-2025.pdf"
       weight: 10
@@ -30,3 +45,7 @@ params:
   UseHugoToc: true
   ShowPostNavLinks: true
   math: true
+
+taxonomies:
+  tag: tags
+  category: categories

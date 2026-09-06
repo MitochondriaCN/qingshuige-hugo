@@ -29,21 +29,9 @@
           "type": "string"
         },
         {
-          "title": "build",
-          "name": "build",
-          "type": "fields",
-          "fields": [
-            {
-              "title": "list",
-              "name": "list",
-              "type": "string"
-            },
-            {
-              "title": "render",
-              "name": "render",
-              "type": "string"
-            }
-          ]
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
         }
       ]
     }

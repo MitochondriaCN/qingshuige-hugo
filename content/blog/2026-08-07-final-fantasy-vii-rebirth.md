@@ -3,6 +3,7 @@ title: FINAL FANTASY VII REBIRTH
 date: 2026-01-30T06:58:56.000Z
 draft: true
 author: 线粒体
+categories: 诗
 ---
 
 ![](/uploads/20260129172427_1-1024x576.jpg)

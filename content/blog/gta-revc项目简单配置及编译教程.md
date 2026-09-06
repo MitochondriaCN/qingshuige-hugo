@@ -2,6 +2,7 @@
 title: GTA reVC项目简单配置及编译教程
 date: 2025-01-04T17:02:00.000+08:00
 author: 线粒体
+categories: 学
 ---
 ![](/uploads/revc-reverse-engineered-grand-theft_1686007939_305395.webp)
 

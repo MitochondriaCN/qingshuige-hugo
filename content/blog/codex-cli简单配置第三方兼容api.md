@@ -2,6 +2,7 @@
 title: Codex CLI简单配置第三方兼容API
 date: 2026-03-08T23:56:00.000+08:00
 author: 线粒体
+categories: 学
 ---
 ## 引言
 

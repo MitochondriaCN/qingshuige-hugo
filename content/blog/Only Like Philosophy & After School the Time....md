@@ -3,6 +3,7 @@ title: Only Like Philosophy & After School the Time...
 slug: only-like-philosophy-after-school-the-time
 date: 2025-11-24T02:44:43.000+08:00
 author: 线粒体
+categories: 文
 ---
 https://open.spotify.com/track/13vVqIodooZ2V1JcEcvjgM?si=c98d91114d4e45ea
 

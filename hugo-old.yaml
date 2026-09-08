@@ -1,0 +1,78 @@
+baseURL: "https://qingshuige.ink/"
+languageCode: "zh-Hans"
+title: "清水阁"
+theme: "PaperMod"
+defaultContentLanguage: "zh"
+hasCJKLanguage: true
+
+menu:
+  main:
+    - name: "文"
+      url: "/categories/文/"
+      weight: 1
+    - name: "诗"
+      url: "/categories/诗/"
+      weight: 2
+    - name: "艺"
+      url: "/categories/艺/"
+      weight: 3
+    - name: "学"
+      url: "/categories/学/"
+      weight: 4
+    - name: "其他"
+      url: "/categories/其他/"
+      weight: 5
+    - name: "年鉴2025"
+      url: "/files/qingshuige-annual-2025.pdf"
+      weight: 10
+
+params:
+  # Shared by PaperMod and qingshuige-theme. The plugin owns all search code.
+  qingshuigeSearch:
+    enabled: true
+    indexPath: search-index.json
+    sections: [blog, almanac]
+    engine:
+      maxResults: 20
+      snippetLength: 110
+      maxDocumentFrequencyRatio: 0.6
+    ui:
+      debounceMs: 120
+      # resultLimit: 20 # Optional panel override; otherwise uses engine.maxResults.
+
+  author:
+    name: "清水阁"
+
+  assets:
+    favicon: "/favicon.png"
+    favicon16x16: "/favicon.png"
+    favicon32x32: "/favicon.png"
+
+  homeInfoParams:
+    Title: 清水阁
+    Content: |
+      后之览者，亦将有感于斯文
+
+  defaultTheme: auto
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  ShowPostNavLinks: true
+  math: true
+
+taxonomies:
+  tag: tags
+  category: categories
+
+module:
+  mounts:
+    # Explicit mounts preserve the site's own assets and layouts.
+    - source: layouts
+      target: layouts
+    - source: assets
+      target: assets
+    - source: plugins/qingshuige-search/adapters/hugo/layouts
+      target: layouts
+    - source: plugins/qingshuige-search/adapters/hugo/assets
+      target: assets
+    - source: plugins/qingshuige-search/assets
+      target: assets

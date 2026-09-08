@@ -7,15 +7,12 @@
 #
 # Hugo 会按从左到右的优先级合并配置；本文件只提供新主题预览所需项目。
 
-
-theme: qingshuige-theme
-
 # Search inherits params.qingshuigeSearch and plugin mounts from hugo.yaml.
 # The theme only provides the navigation button and resource hooks.
 baseURL: "https://qingshuige.ink/"
 languageCode: "zh-Hans"
 title: "清水阁"
-theme: "PaperMod"
+theme: qingshuige-theme
 defaultContentLanguage: "zh"
 hasCJKLanguage: true
 
@@ -37,13 +34,12 @@ params:
   author:
     name: "清水阁"
 
-params:
   qingshuige:
     logo: "/favicon.png"
 
     avatar: "/qingshuige/defaults/avatar.png"
 
-defaultTheme: auto
+  defaultTheme: auto
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
   ShowPostNavLinks: true
@@ -52,8 +48,6 @@ defaultTheme: auto
   taxonomies:
   tag: tags
   category: categories
-
-  
 
 menus:
   main:
@@ -136,17 +130,17 @@ menus:
         avatar: true
         placeholder: true
 
-        module:
+module:
   mounts:
-    # Explicit mounts preserve the site's own assets and layouts.
-    - source: layouts
-      target: layouts
-    - source: assets
-      target: assets
-    - source: plugins/qingshuige-search/adapters/hugo/layouts
-      target: layouts
-    - source: plugins/qingshuige-search/adapters/hugo/assets
-      target: assets
-    - source: plugins/qingshuige-search/assets
-      target: assets
+  # Explicit mounts preserve the site's own assets and layouts.
+  - source: layouts
+    target: layouts
+  - source: assets
+    target: assets
+  - source: plugins/qingshuige-search/adapters/hugo/layouts
+    target: layouts
+  - source: plugins/qingshuige-search/adapters/hugo/assets
+    target: assets
+  - source: plugins/qingshuige-search/assets
+    target: assets
 

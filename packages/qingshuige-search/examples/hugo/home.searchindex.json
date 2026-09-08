@@ -1,0 +1,19 @@
+{{- $documents := slice -}}
+{{- range site.RegularPages -}}
+  {{- if not .Params.searchHidden -}}
+    {{- $categories := .Params.categories | default (slice) -}}
+    {{- if not (reflect.IsSlice $categories) -}}
+      {{- $categories = slice $categories -}}
+    {{- end -}}
+    {{- $documents = $documents | append (dict
+      "id" .RelPermalink
+      "title" .Title
+      "author" (.Params.author | default "")
+      "date" (.Date.Format "2006-01-02T15:04:05Z07:00")
+      "categories" $categories
+      "content" .Plain
+      "url" .RelPermalink
+    ) -}}
+  {{- end -}}
+{{- end -}}
+{{- $documents | jsonify -}}

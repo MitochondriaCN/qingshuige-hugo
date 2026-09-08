@@ -11,3 +11,6 @@
 ## 技术栈
 
 采用极其先进的[Hugo](https://gohugo.io/)和极其美观的[PaperMod](https://github.com/adityatelange/hugo-PaperMod/)！
+## 搜索交互修复
+
+本次修复的使用方法、文件变更和验证记录见 [SEARCH-FIX-README.md](SEARCH-FIX-README.md)。包内已附编译资源，可直接使用清水阁主题预览配置运行 Hugo。

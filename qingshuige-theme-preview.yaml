@@ -14,6 +14,13 @@ params:
     logo: "/favicon.png"
 
     avatar: "/qingshuige/defaults/avatar.png"
+
+    # 站内搜索交互配置。搜索按钮由 Hugo 导航模板直接输出，Vue 只负责弹层交互。
+    search:
+      enabled: true
+      indexUrl: "search-index.json"
+      # 避免把主题自带的演示文章加入本站搜索。
+      sections: ["blog", "almanac"]
   
 
 menus:
@@ -79,13 +86,20 @@ menus:
 
      - identifier: site_preface
        name: "建站弁言"
-       pageRef: "/categories/建站弁言"
+       pageRef: "/blog/建站弁言"
        weight: 30
 
      - identifier: almanac_2025
        name: "年鉴2025"
-       pageRef: "/categories/年鉴2025"
+       pageRef: "/almanac/2025"
        weight: 40
+
+    # 搜索是导航交互项，不是普通链接。menu-items.html 会根据 action 渲染按钮。
+     - identifier: search
+       name: "搜索"
+       weight: 45
+       params:
+        action: search
 
     # 个人主页用头像代替文字。等目标地址确定后，删除 placeholder，
     # 并添加 pageRef（站内页面）或 url（站外个人主页）。
@@ -95,3 +109,18 @@ menus:
        params:
         avatar: true
         placeholder: true
+
+
+# qingshuige-search: publish a framework-agnostic article index at /search-index.json.
+outputFormats:
+  SearchIndex:
+    mediaType: application/json
+    baseName: search-index
+    isPlainText: true
+    notAlternative: true
+
+outputs:
+  home:
+    - html
+    - rss
+    - SearchIndex

@@ -1,0 +1,29 @@
+{
+  "name": "qingshuige-search",
+  "version": "0.1.0",
+  "description": "Framework-agnostic local full-text search engine for static sites, with CJK bigram tokenization and inverted indexes.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "search",
+    "full-text-search",
+    "static-site",
+    "hugo",
+    "cjk",
+    "inverted-index"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}

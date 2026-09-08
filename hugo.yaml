@@ -49,7 +49,8 @@ params:
   ShowPostNavLinks: true
   math: true
 
-  taxonomies:
+taxonomies:
+  author: author
   tag: tags
   category: categories
 
@@ -107,6 +108,11 @@ menus:
        parent: categories
        weight: 60
 
+     - identifier: authors
+       name: "所有作者"
+       pageRef: "/author"
+       weight: 15
+
     # 目前主站还没有“撰文指南”内容页，因此先作为待开发交互项显示。
      - identifier: writing_guide
        name: "撰文指南"
@@ -147,4 +153,3 @@ module:
     target: assets
   - source: plugins/qingshuige-search/assets
     target: assets
-

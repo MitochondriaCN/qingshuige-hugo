@@ -36,8 +36,12 @@ params:
 
   qingshuige:
     logo: "/favicon.png"
-
     avatar: "/qingshuige/defaults/avatar.png"
+  
+  assets:
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon.ico"
+    favicon32x32: "/favicon.ico"
 
   defaultTheme: auto
   ShowRssButtonInSectionTermList: true

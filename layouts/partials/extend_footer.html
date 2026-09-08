@@ -1,0 +1,4 @@
+{{- if templates.Exists "_partials/qingshuige-search/trigger.html" -}}
+  {{- partial "qingshuige-search/trigger.html" (dict "page" . "floating" true) -}}
+  {{- partial "qingshuige-search/scripts.html" . -}}
+{{- end -}}

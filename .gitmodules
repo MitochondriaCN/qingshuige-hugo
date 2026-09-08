@@ -1,3 +1,6 @@
 [submodule "themes/qingshuige-theme"]
 	path = themes/qingshuige-theme
 	url = https://github.com/nanmuweyyyyyy/qingshuige-theme.git
+[submodule "plugins/qingshuige-search"]
+	path = plugins/qingshuige-search
+	url = https://github.com/nanmuweyyyyyy/qingshuige-search.git

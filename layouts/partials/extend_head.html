@@ -5,3 +5,6 @@
 {{ if or .Params.math .Site.Params.math }}
 {{ partial "math.html" . }}
 {{ end }}
+{{ if templates.Exists "_partials/qingshuige-search/head.html" }}
+{{ partial "qingshuige-search/head.html" . }}
+{{ end }}

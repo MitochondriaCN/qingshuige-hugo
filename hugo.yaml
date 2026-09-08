@@ -27,6 +27,19 @@ menu:
       weight: 10
 
 params:
+  # Shared by PaperMod and qingshuige-theme. The plugin owns all search code.
+  qingshuigeSearch:
+    enabled: true
+    indexPath: search-index.json
+    sections: [blog, almanac]
+    engine:
+      maxResults: 20
+      snippetLength: 110
+      maxDocumentFrequencyRatio: 0.6
+    ui:
+      debounceMs: 120
+      # resultLimit: 20 # Optional panel override; otherwise uses engine.maxResults.
+
   author:
     name: "清水阁"
 
@@ -49,3 +62,17 @@ params:
 taxonomies:
   tag: tags
   category: categories
+
+module:
+  mounts:
+    # Explicit mounts preserve the site's own assets and layouts.
+    - source: layouts
+      target: layouts
+    - source: assets
+      target: assets
+    - source: plugins/qingshuige-search/adapters/hugo/layouts
+      target: layouts
+    - source: plugins/qingshuige-search/adapters/hugo/assets
+      target: assets
+    - source: plugins/qingshuige-search/assets
+      target: assets

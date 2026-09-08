@@ -9,11 +9,15 @@
 
 theme: qingshuige-theme
 
+# Search inherits params.qingshuigeSearch and plugin mounts from hugo.yaml.
+# The theme only provides the navigation button and resource hooks.
+
 params:
   qingshuige:
     logo: "/favicon.png"
 
     avatar: "/qingshuige/defaults/avatar.png"
+
   
 
 menus:
@@ -79,13 +83,14 @@ menus:
 
      - identifier: site_preface
        name: "建站弁言"
-       pageRef: "/categories/建站弁言"
+       pageRef: "/blog/建站弁言"
        weight: 30
 
      - identifier: almanac_2025
        name: "年鉴2025"
-       pageRef: "/categories/年鉴2025"
+       pageRef: "/almanac/2025"
        weight: 40
+
 
     # 个人主页用头像代替文字。等目标地址确定后，删除 placeholder，
     # 并添加 pageRef（站内页面）或 url（站外个人主页）。

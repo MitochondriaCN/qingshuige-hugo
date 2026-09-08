@@ -14,3 +14,6 @@ hugo.linux
 /.hugo_build.lock
 
 .DS_Store
+
+# Local search integration builds and tool downloads
+/.search-work/

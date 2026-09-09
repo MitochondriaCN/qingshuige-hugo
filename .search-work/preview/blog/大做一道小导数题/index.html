@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><title>大做一道小导数题 · 清水阁</title><meta name="description" content="题目 【2024·嘉峪关市酒钢三中1月联考预测卷：21. (2)】 $g\left ( x \right ) = x\ln_{}{\left ( x&#43;1 \right ) } &#43;a\ln_{}{\left ( x&#43;1 \right ) } -x$ ，$g\left ( x \right )$ 在 $\left ( 0,&#43; \infty \right )$ 单调递增，求 $a$ 的取值范围．
+">
+
+<link rel="canonical" href="https://qingshuige.ink/blog/%E5%A4%A7%E5%81%9A%E4%B8%80%E9%81%93%E5%B0%8F%E5%AF%BC%E6%95%B0%E9%A2%98/">
+
+<link rel="stylesheet" href="/assets/qingshuige.1f39c2f793dfc658ae5e45e28d9186b4e01c76e0ed9b5c42a8040048381843cf.css" integrity="sha256-HznC95PfxliuXkXijZGGtOAcduDtm1xCqAQASDgYQ88=" crossorigin="anonymous"><link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+  integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+  crossorigin="anonymous"
+>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+  integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+  crossorigin="anonymous"
+></script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof renderMathInElement !== "function") {
+      return
+    }
+
+    const contentAreas = document.querySelectorAll(".prose")
+
+    contentAreas.forEach((content) => {
+
+      renderMathInElement(content, {
+
+        delimiters: [
+          {
+            left: "$$",
+            right: "$$",
+            display: true
+          },
+          {
+            left: "$",
+            right: "$",
+            display: false
+          },
+          {
+            left: "\\(",
+            right: "\\)",
+            display: false
+          },
+          {
+            left: "\\[",
+            right: "\\]",
+            display: true
+          }
+        ],
+
+        ignoredTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code",
+          "option"
+        ],
+
+        throwOnError: false
+
+      })
+
+    })
+
+  })
+</script>
+
+</head>
+<body class="site-shell page-kind-page section-blog">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-brand" href="/" aria-label="返回清水阁首页">
+      <span class="site-brand__logo-slot" aria-hidden="true"><img class="site-brand__logo" src="/favicon.png" alt="" width="36" height="36"></span>
+      <span class="site-brand__text">清水阁</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主导航" data-site-nav>
+  <ul class="site-nav__list"><li class="site-nav__item site-nav__item--has-children"><button
+        class="site-nav__link site-nav__trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="qsg-menu-categories"
+        data-menu-trigger
+        data-menu-current="true"
+      >
+        <span>文章分类</span>
+        <svg class="site-nav__chevron" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="site-nav__submenu" id="qsg-menu-categories" data-menu-submenu><li class="site-nav__item"><a class="site-nav__link" href="/blog/" aria-current="page">全部文章</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%AF%97/">诗</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E6%96%87/">文</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%89%BA/">艺</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%AD%A6/">学</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul></li><li class="site-nav__item"><button class="site-nav__link site-nav__placeholder" type="button" title="撰文指南（待开发）" aria-label="撰文指南，待开发">
+        撰文指南
+      </button></li><li class="site-nav__item"><a class="site-nav__link" href="/blog/%E5%BB%BA%E7%AB%99%E5%BC%81%E8%A8%80/">建站弁言</a></li><li class="site-nav__item"><a class="site-nav__link" href="/almanac/2025/">年鉴2025</a></li><li class="site-nav__item site-nav__item--avatar"><button class="site-nav__avatar-link site-nav__placeholder" type="button" title="个人主页（待开发）" aria-label="个人主页，待开发">
+          <img class="site-nav__avatar" src="/qingshuige/defaults/avatar.png" alt="" width="36" height="36">
+        </button></li><li class="site-nav__item"><button class="qsg-search-trigger" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg></button></li></ul>
+</nav>
+  </div>
+</header>
+
+
+  <main id="main-content" class="site-main">
+    
+
+<article class="site-container article-single article-single--blog">
+
+  <header class="article-header">
+
+    
+<nav class="article-categories" aria-label="文章分类">
+    <a
+      class="article-category"
+      href="/categories/%E5%AD%A6/"
+      rel="tag"
+    >
+      学
+    </a>
+</nav>
+
+
+    <h1 class="article-title">
+      大做一道小导数题
+    </h1>
+
+    <div class="article-meta">
+    <span class="article-meta__author">
+      线粒体
+    </span>
+    <time
+      class="article-meta__date"
+      datetime="2024-01-03T23:56:00&#43;08:00"
+    >
+      2024-01-03
+    </time>
+    <span class="article-meta__reading-time">
+      约 4 分钟阅读
+    </span>
+
+</div>
+
+
+  </header>
+  
+  
+
+  <div class="prose article-content">
+    <h2 id="题目">题目</h2>
+<p><strong>【2024·嘉峪关市酒钢三中1月联考预测卷：21. (2)】</strong> $g\left ( x \right ) = x\ln_{}{\left ( x+1 \right ) } +a\ln_{}{\left ( x+1 \right ) } -x$ ，$g\left ( x \right )$ 在 $\left ( 0,+ \infty \right )$ 单调递增，求 $a$ 的取值范围．</p>
+<h2 id="大做法">大做法</h2>
+<h3 id="解析">解析</h3>
+<p>$g\left ( x \right )$ 作为一个十分复杂的函数，通过直接观察的方式显然不能有所突破，因此，考虑 $g\left ( x \right )$ 的导函数 ${g}^{\prime} (x)$ ．$g(x)$ 在 $(0,+ \infty)$ 单调递增的等价命题是： ${g}^{\prime} (x)$ 在 $(0,+ \infty)$ 上非负．</p>
+<p>因此，题目求解的是命题 $p : \forall x\in (0,+\infty)$ ，${g}^{\prime} (x) \ge 0$ 为真时，$a$ 的取值范围．</p>
+<p>$$ {g}^{\prime} (x) = \ln_{}{(x+1)} + \dfrac {a-1}{x+1}. $$</p>
+<p>所以命题$p : \forall x \in (0,+\infty)$，${g}^{\prime} (x) =\ln_{}{(x+1)} + \dfrac {a-1}{x+1} \ge 0. $</p>
+<p>当前的目标是求得使该命题为真的 $a$ 的取值范围．</p>
+<p>${g}^{\prime} (x)$ 的性质仍然不是很明显，因此对 ${g}^{\prime} (x)$ 求导：</p>
+<p>$$ {g}^{\prime\prime} (x) = \dfrac {1}{x+1} + \dfrac {-(a-1)}{(x+1)^{2}} = \dfrac {x-a+2}{(x+1)^{2}} . $$</p>
+<p>${g}^{\prime\prime} (x)$ 是 ${g}^{\prime} (x)$ 的导函数，考察 ${g}^{\prime\prime} (x)$ 来观察 ${g}^{\prime} (x)$ 的性质．</p>
+<p>令 ${g}^{\prime\prime} (x) = 0$ ，得到 $x = a-2$ ．即 ${g}^{\prime} (x)$ 的驻点是 $a-2$ ．这时需要讨论该驻点是否在定义域 $(-1,+\infty)$ 内，先讨论在定义域内的情形，即 $a-2 &gt; -1$ ，$a&gt;1$ ．当 $x&lt;a-2$ 时，$x-a+2 &lt; 0$ ，所以 ${g}^{\prime\prime} (x) &lt; 0$ ．当 $x&gt;a-2$ 时，$x-a+2&gt;0$ ，所以 ${g}^{\prime\prime} (x) &gt; 0$ ．所以 ${g}^{\prime} (x)$ 在驻点左侧单调递减，在驻点右侧单调递增．</p>
+<p>当驻点小于或等于 $-1$ 时，可以说 ${g}^{\prime} (x)$ 在定义域内无驻点．此时 $a-2 \le -1$ ，$x-a+2 \ge x+1$ ，$\dfrac {x-a+2}{x+1} \ge 1$ ，所以 ${g}^{\prime\prime} (x)$ 在定义域内恒大于 $0$ ，${g}^{\prime} (x)$ 在定义域内为增函数．</p>
+<p>由上总结 ${g}^{\prime} (x)$ 的两种单调性：</p>
+<ol>
+<li>当 $a-2&gt;-1$ 即 $a&gt;1$ 时，${g}^{\prime} (x)$ 在 $a-2$ 左侧减，右侧增（图1）.</li>
+<li>当 $a-2 \le -1$ 即 $a \le 1$ 时，${g}^{\prime} (x)$ 在定义域上增（图2）.</li>
+</ol>
+<p><img src="/uploads/geogebra-export-3.png" alt="" title="图1"></p>
+<p><img src="/uploads/geogebra-export-2.png" alt="" title="图2"></p>
+<p>注意到我们要求的是命题 $p : \forall x\in (0,+\infty)$ ，${g}^{\prime} (x) \ge 0$ 为真时，$a$ 的取值范围．</p>
+<p>显然，对于 $a-2 \le -1$ 即 $a \le 1$ 的情况，由于 ${g}^{\prime} (x)$ 在定义域上增，故在 $(0,+\infty)$ 上也增，因此只需使 ${g}^{\prime} (0) \ge 0$ ，就可以使命题 $p$ 为真．所以 ${g}^{\prime} (0)=a-1 \ge 0$ ，$a \ge 1$ ．结合 $a \le 1$ 的前提，得 $a=1$ ．</p>
+<p>$a-2&gt;-1$ 即 $a&gt;1$ 的情况比较复杂，可以分为两种情况去讨论．<strong>第一</strong>，当 $-1&lt;a-2 \le 0$ 即 $1&lt;a \le 2$ 时，${g}^{\prime} (x)$ 在 $(0,+\infty)$ 上是增的，因此只需 ${g}^{\prime} (0) \ge 0$ 即可满足命题 $p$ ，解得 $a \ge 1$ ，结合前提得 $1&lt;a \le 2$ ．<strong>第二</strong>，当 $a-2&gt;0$ 即 $a&gt;2$ 时，${g}^{\prime} (x)$ 在 $x=a-2$ 处取得最小值，故只需 ${g}^{\prime} (a-2) \ge 0$ 即可满足命题 $p$ ，${g}^{\prime} (a-2)=\ln_{}{(a-1)}+\dfrac {a-1}{a-1}=\ln_{}{(a-1)}+1 \ge 0$ ，$\ln_{}{(a-1)} \ge -1$ ， $a \ge \dfrac {1}{\mathrm{e}} +1$ ，结合前提得 $a&gt;2$ ．</p>
+<p>综上，列出满足 $p$ 的三个条件：</p>
+<ol>
+<li>$a=1$．</li>
+<li>$1&lt;a \le 2$.</li>
+<li>$a&gt;2$.</li>
+</ol>
+<p>这三个条件涵盖了所以可能的情况，取并集即可．综上，得出结论：</p>
+<p>当 $a \ge 1$ 时，$g\left ( x \right )$ 在 $\left ( 0,+ \infty \right )$ 单调递增．</p>
+<h3 id="总结">总结</h3>
+<p>本题研究的是函数的值域问题．由于函数较复杂，需要通过导数来考察函数单调性．过程中需要研究的问题是：函数是不是单调的？在何种情况下是单调的？何种情况下不是？最大值、最小值是多少？在何处取得？等等．虽然使用了二阶导数，但本质上仍然是普通的导数应用问题．必须要关注的是逻辑关系及分类讨论的重要性．</p>
+<p>班门弄斧，望不吝批评指教！</p>
+<h2 id="小做法">小做法</h2>
+<p>要求的仍然是 $\forall x\in (0,+\infty)$ ，${g}^{\prime} (x) \ge 0$ 时 $a$ 的取值范围，即 $\ln_{}{(x+1)}+\dfrac{a-1}{x+1} \ge 0$ 时 $a$ 的取值范围．</p>
+<p>对于 $x\in (0,+\infty)$ ，$\ln_{}{(x+1)}$ 是恒正的．$\dfrac{a-1}{x+1}$ 则有两种情况：第一，当 $a-1 &lt;0$ 即 $a&lt;1$ ，$\dfrac{a-1}{x+1}$ 恒为负．第二，当 $a-1 \ge 0$ 即 $a \ge 1$ ，$\dfrac{a-1}{x+1}$ 恒非负．</p>
+<p>如图3，对于 $x\in (0,+\infty)$ ，当 $a-1 &lt;0$ 时，其他点暂且勿论，单看 $\lim_{x \to 0^{+}} \ln_{}{(x+1)}+\dfrac{a-1}{x+1} &lt; 0$ ，就知道 $a-1 &lt;0$ 不满足这个命题．而 $a-1 \ge 0$ 显然是满足的，因为两正数相加结果一定为正数．故只需使 $a-1 \ge 0$ 即可使命题为真．</p>
+<p><img src="/uploads/geogebra-export-4.png" alt=""></p>
+<p>该做法相当巧妙简洁，在考场上能够节省大量时间，是绝大多数学生采用的做法．</p>
+<blockquote>
+<p>题不要多做，要做精、做透，研究得清清楚楚。</p>
+<p>——@nanmu</p>
+</blockquote>
+
+  </div>
+
+  <footer class="article-footer">
+    
+
+    <nav class="article-navigation" aria-label="文章导航">
+
+      
+
+      
+
+      <div class="article-navigation__posts">
+
+        <div class="article-navigation__previous">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E5%85%B3%E4%BA%8E%E6%95%B0%E7%A0%81it%E5%92%8C%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E5%87%A0%E4%B8%AA%E8%AE%BA%E6%96%AD/"
+              rel="prev"
+            >
+
+              <span class="article-navigation__label">
+                ← 上一篇
+              </span>
+
+              <span class="article-navigation__title">
+                关于数码、IT和互联网的几个论断
+              </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="article-navigation__next">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E9%80%8F%E8%BF%87%E8%87%AA%E6%88%91%E6%89%B9%E5%88%A4%E7%AA%A5%E8%A7%81%E7%9A%84%E7%A4%BE%E4%BC%9A%E5%BF%83%E7%90%86%E5%AD%A6/"
+              rel="next"
+            >
+
+              <span class="article-navigation__label">
+                下一篇 →
+              </span>
+
+              <span class="article-navigation__title">
+                透过自我批判窥见的社会心理学
+              </span>
+
+            </a>
+
+        </div>
+
+      </div>
+
+
+    <div class="article-navigation__back">
+
+      <a href="/categories/%E5%AD%A6/">
+        返回「学」
+      </a>
+
+    </div>
+
+</nav>
+
+  </footer>
+
+</article>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>© 2026 清水阁</p>
+  </div>
+</footer>
+
+  <script defer src="/js/menu.323881ab00806207b47fbff37467f1e3e39190c2e57cc79d162ce6e050897d93.js" integrity="sha256-MjiBqwCAYge0f7/zdGfx4&#43;ORkMLlfMedFizm4FCJfZM=" crossorigin="anonymous"></script><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.c70c5027c0cb6f4970d2ad23fed658dc691c2c9d0fb45f00096df27129e675ef.js" integrity="sha256-xwxQJ8DLb0lw0q0j/tZY3GkcLJ0PtF8ACW3ycSnmde8=" crossorigin="anonymous"></script>
+</body>
+</html>

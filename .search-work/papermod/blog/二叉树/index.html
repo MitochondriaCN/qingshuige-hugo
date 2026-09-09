@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>二叉树 | 清水阁</title>
+<meta name="keywords" content="">
+<meta name="description" content="2015年左右，三年级的我第一次见到了代码。那时候见到了一位正在上大学的姐姐的Visual Basic作业，本身就对电脑很感兴趣的我，很快就被吸引了。我在她的电脑上乱敲键盘，打出一大堆乱码，说这就是我的代码。她还夸我很厉害。">
+<meta name="author" content="线粒体">
+<link rel="canonical" href="https://qingshuige.ink/blog/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://qingshuige.ink/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://qingshuige.ink/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://qingshuige.ink/favicon.png">
+<link rel="apple-touch-icon" href="https://qingshuige.ink/apple-touch-icon.png">
+<link rel="mask-icon" href="https://qingshuige.ink/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://qingshuige.ink/blog/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css" integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js" integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+
+<link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+
+<meta property="og:url" content="https://qingshuige.ink/blog/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+  <meta property="og:site_name" content="清水阁">
+  <meta property="og:title" content="二叉树">
+  <meta property="og:description" content="2015年左右，三年级的我第一次见到了代码。那时候见到了一位正在上大学的姐姐的Visual Basic作业，本身就对电脑很感兴趣的我，很快就被吸引了。我在她的电脑上乱敲键盘，打出一大堆乱码，说这就是我的代码。她还夸我很厉害。">
+  <meta property="og:locale" content="zh-Hans">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-03-27T11:27:00+08:00">
+    <meta property="article:modified_time" content="2026-03-27T11:27:00+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="二叉树">
+<meta name="twitter:description" content="2015年左右，三年级的我第一次见到了代码。那时候见到了一位正在上大学的姐姐的Visual Basic作业，本身就对电脑很感兴趣的我，很快就被吸引了。我在她的电脑上乱敲键盘，打出一大堆乱码，说这就是我的代码。她还夸我很厉害。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://qingshuige.ink/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "二叉树",
+      "item": "https://qingshuige.ink/blog/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "二叉树",
+  "name": "二叉树",
+  "description": "2015年左右，三年级的我第一次见到了代码。那时候见到了一位正在上大学的姐姐的Visual Basic作业，本身就对电脑很感兴趣的我，很快就被吸引了。我在她的电脑上乱敲键盘，打出一大堆乱码，说这就是我的代码。她还夸我很厉害。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "2015年左右，三年级的我第一次见到了代码。那时候见到了一位正在上大学的姐姐的Visual Basic作业，本身就对电脑很感兴趣的我，很快就被吸引了。我在她的电脑上乱敲键盘，打出一大堆乱码，说这就是我的代码。她还夸我很厉害。\n2017年，我第一次学编程。我的第一门编程语言是C，第一本编程书是谭浩强。我每天看一点点，写一点点。为什么函数要先声明再实现？这是在编程中困扰我的第一个重大问题。我花了两个月的时间，才理解函数的声明和函数的实现是分离的，后来我才知道这个叫封装。\n我用stdio写了一些命令行程序。那时候不知道用代码编辑器，而是用记事本写代码。\n很快我就觉得命令行不是我想要的，我想要炫酷的GUI。于是我的第二门语言是VB，那时候我觉得VB就是写GUI最好的语言。但是一开始我完全没有理解面向对象，不知道什么叫实例。所以我又开始啃VB的书。不过这一次比学C快多了，不到半个月我就能用VB写程序了，而且还用上了Visual Studio。\n但是我的VB生涯只持续了很短的时间，一个原因是这门语言本身不太流行，框架也很少。于是我的第三门语言是Java，看的书是臭名昭著的《从入门到精通》。这样一本烂书却让我学会了Java大部分的基础知识。现在人们学Java可能是为了做互联网开发，但那时候，我从C学到Java，乃至后面的C#，都没有对互联网开发展现出任何兴趣，更不懂什么SaaS，只是一心想做一个“买断制产品”。所以我对桌面软件非常感兴趣，也可以说是我的技能树点歪了。\n我学做Java Swing，用Thread手搓动画，做了一个工具箱软件。这是我的第一个称得上“作品”的项目，总共有三千多行。但后来我换了电脑，一行都没有保存下来。年轻人总觉得自己将来有无限可能，有谁不把过去通通抛在脑后呢？\n当我觉得Java也不过瘾的时候，我开始学C#，做Unity 3D。从Java转C#并不需要多少成本，倒是把大部分时间都放在了研究U3D上。我做了一个小游戏。此外还学WinForms，做了一个文本编辑器，还在省级比赛上获了一等奖。\n以上都是2017到2018年间发生的事，这两年我完成了我迄今所用几乎所有技术的原始积累。可惜的是，2018年开始直到2025年，7年间，我没有学习任何一门新语言，Android和WPF的学习也无疾而终。\n2022年，我做出了我人生中一个极为不妥的决定：转到文科班。在2022年以前，我从没想过有一天我会去学文科，我一直以为自己是个纯正的理科生。但是人在环境极度压抑的情况下会做出一些极端的决定，我只是为了赌气，或者说想逃离那个班级环境，就让我的理想和前途大打折扣。\n同年的某一天，一位老师给我一份资料，问我要不要去参加信竞。那时候我只觉得数竞、化竞、生竞才是“正规竞赛”，对信竞并不上心，便敷衍过去。\n后来上了大学，才发现大量CS领域的大佬都是信竞出身，有些甚至从小学开始到高中，一直参加信竞。\n而我自小学毕业到高考的6年内，再也没有2017年那样深入钻研过编程。\n而我在2025一年间学到的编程知识，却比我过去人生中所学的总和还要多。\n当我今天只能通过考研来进入这个自幼向往的行业时，不禁回想起十年前独自啃书本写代码的那些时光。\n种一棵树最好的时间是十年前，其次是现在。\n",
+  "wordCount" : "1332",
+  "inLanguage": "zh",
+  "datePublished": "2026-03-27T11:27:00+08:00",
+  "dateModified": "2026-03-27T11:27:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "线粒体"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://qingshuige.ink/blog/%E4%BA%8C%E5%8F%89%E6%A0%91/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "清水阁",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://qingshuige.ink/favicon.png"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://qingshuige.ink/" accesskey="h" title="清水阁 (Alt + H)">清水阁</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://qingshuige.ink/categories/%E6%96%87/" title="文">
+                    <span>文</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/categories/%E8%AF%97/" title="诗">
+                    <span>诗</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/categories/%E8%89%BA/" title="艺">
+                    <span>艺</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/categories/%E5%AD%A6/" title="学">
+                    <span>学</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/categories/%E5%85%B6%E4%BB%96/" title="其他">
+                    <span>其他</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/files/qingshuige-annual-2025.pdf" title="年鉴2025">
+                    <span>年鉴2025</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      二叉树
+    </h1>
+    <div class="post-meta"><span title='2026-03-27 11:27:00 +0800 CST'>2026年3月27日</span>&nbsp;·&nbsp;<span>线粒体</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>2015年左右，三年级的我第一次见到了代码。那时候见到了一位正在上大学的姐姐的Visual Basic作业，本身就对电脑很感兴趣的我，很快就被吸引了。我在她的电脑上乱敲键盘，打出一大堆乱码，说这就是我的代码。她还夸我很厉害。</p>
+<p>2017年，我第一次学编程。我的第一门编程语言是C，第一本编程书是谭浩强。我每天看一点点，写一点点。为什么函数要先声明再实现？这是在编程中困扰我的第一个重大问题。我花了两个月的时间，才理解函数的声明和函数的实现是分离的，后来我才知道这个叫封装。</p>
+<p>我用<code>stdio</code>写了一些命令行程序。那时候不知道用代码编辑器，而是用记事本写代码。</p>
+<p>很快我就觉得命令行不是我想要的，我想要炫酷的GUI。于是我的第二门语言是VB，那时候我觉得VB就是写GUI最好的语言。但是一开始我完全没有理解面向对象，不知道什么叫实例。所以我又开始啃VB的书。不过这一次比学C快多了，不到半个月我就能用VB写程序了，而且还用上了Visual Studio。</p>
+<p>但是我的VB生涯只持续了很短的时间，一个原因是这门语言本身不太流行，框架也很少。于是我的第三门语言是Java，看的书是臭名昭著的《从入门到精通》。这样一本烂书却让我学会了Java大部分的基础知识。现在人们学Java可能是为了做互联网开发，但那时候，我从C学到Java，乃至后面的C#，都没有对互联网开发展现出任何兴趣，更不懂什么SaaS，只是一心想做一个“买断制产品”。所以我对桌面软件非常感兴趣，也可以说是我的技能树点歪了。</p>
+<p>我学做Java Swing，用<code>Thread</code>手搓动画，做了一个工具箱软件。这是我的第一个称得上“作品”的项目，总共有三千多行。但后来我换了电脑，一行都没有保存下来。年轻人总觉得自己将来有无限可能，有谁不把过去通通抛在脑后呢？</p>
+<p>当我觉得Java也不过瘾的时候，我开始学C#，做Unity 3D。从Java转C#并不需要多少成本，倒是把大部分时间都放在了研究U3D上。我做了一个小游戏。此外还学WinForms，做了一个文本编辑器，还在省级比赛上获了一等奖。</p>
+<p>以上都是2017到2018年间发生的事，这两年我完成了我迄今所用几乎所有技术的原始积累。可惜的是，2018年开始直到2025年，7年间，我没有学习任何一门新语言，Android和WPF的学习也无疾而终。</p>
+<p>2022年，我做出了我人生中一个极为不妥的决定：转到文科班。在2022年以前，我从没想过有一天我会去学文科，我一直以为自己是个纯正的理科生。但是人在环境极度压抑的情况下会做出一些极端的决定，我只是为了赌气，或者说想逃离那个班级环境，就让我的理想和前途大打折扣。</p>
+<p>同年的某一天，一位老师给我一份资料，问我要不要去参加信竞。那时候我只觉得数竞、化竞、生竞才是“正规竞赛”，对信竞并不上心，便敷衍过去。</p>
+<p>后来上了大学，才发现大量CS领域的大佬都是信竞出身，有些甚至从小学开始到高中，一直参加信竞。</p>
+<p>而我自小学毕业到高考的6年内，再也没有2017年那样深入钻研过编程。</p>
+<p>而我在2025一年间学到的编程知识，却比我过去人生中所学的总和还要多。</p>
+<p>当我今天只能通过考研来进入这个自幼向往的行业时，不禁回想起十年前独自啃书本写代码的那些时光。</p>
+<p>种一棵树最好的时间是十年前，其次是现在。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://qingshuige.ink/blog/%E9%9F%B3%E4%B9%90%E5%93%B2%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>音乐哲学的数学原理</span>
+  </a>
+  <a class="next" href="https://qingshuige.ink/blog/%E8%AE%BAvibe-coding%E6%9B%BF%E4%BB%A3%E7%A8%8B%E5%BA%8F%E5%91%98/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>论Vibe Coding替代程序员</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://qingshuige.ink/">清水阁</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><button class="qsg-search-trigger qsg-search-trigger--floating" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg><span>搜索</span></button><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.c70c5027c0cb6f4970d2ad23fed658dc691c2c9d0fb45f00096df27129e675ef.js" integrity="sha256-xwxQJ8DLb0lw0q0j/tZY3GkcLJ0PtF8ACW3ycSnmde8=" crossorigin="anonymous"></script>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

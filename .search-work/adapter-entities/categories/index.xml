@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 清水阁</title>
+    <link>https://qingshuige.ink/categories/</link>
+    <description>Recent content in Categories on 清水阁</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Mon, 24 Aug 2026 11:33:50 +0000</lastBuildDate>
+    <atom:link href="https://qingshuige.ink/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>文</title>
+      <link>https://qingshuige.ink/categories/%E6%96%87/</link>
+      <pubDate>Mon, 24 Aug 2026 11:33:50 +0000</pubDate>
+      <guid>https://qingshuige.ink/categories/%E6%96%87/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>诗</title>
+      <link>https://qingshuige.ink/categories/%E8%AF%97/</link>
+      <pubDate>Sun, 16 Aug 2026 03:23:32 +0000</pubDate>
+      <guid>https://qingshuige.ink/categories/%E8%AF%97/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>学</title>
+      <link>https://qingshuige.ink/categories/%E5%AD%A6/</link>
+      <pubDate>Thu, 18 Jun 2026 03:12:00 +0800</pubDate>
+      <guid>https://qingshuige.ink/categories/%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>其他</title>
+      <link>https://qingshuige.ink/categories/%E5%85%B6%E4%BB%96/</link>
+      <pubDate>Tue, 03 Feb 2026 13:35:00 +0800</pubDate>
+      <guid>https://qingshuige.ink/categories/%E5%85%B6%E4%BB%96/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>艺</title>
+      <link>https://qingshuige.ink/categories/%E8%89%BA/</link>
+      <pubDate>Sun, 18 Jan 2026 17:02:42 +0800</pubDate>
+      <guid>https://qingshuige.ink/categories/%E8%89%BA/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><title>音乐哲学的数学原理 · 清水阁</title><meta name="description" content="声音是由物体的振动产生的。从听觉上来说，振动频率越快，音调就越高；振动频率越慢，音调就越低。我们用$F=a\ \mathrm{Hz}$表示振动频率，其中$a \in (0, &#43;\infty)$。
+">
+
+<link rel="canonical" href="https://qingshuige.ink/blog/%E9%9F%B3%E4%B9%90%E5%93%B2%E5%AD%A6%E7%9A%84%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86/">
+
+<link rel="stylesheet" href="/assets/qingshuige.1f39c2f793dfc658ae5e45e28d9186b4e01c76e0ed9b5c42a8040048381843cf.css" integrity="sha256-HznC95PfxliuXkXijZGGtOAcduDtm1xCqAQASDgYQ88=" crossorigin="anonymous"><link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+  integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+  crossorigin="anonymous"
+>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+  integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+  crossorigin="anonymous"
+></script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof renderMathInElement !== "function") {
+      return
+    }
+
+    const contentAreas = document.querySelectorAll(".prose")
+
+    contentAreas.forEach((content) => {
+
+      renderMathInElement(content, {
+
+        delimiters: [
+          {
+            left: "$$",
+            right: "$$",
+            display: true
+          },
+          {
+            left: "$",
+            right: "$",
+            display: false
+          },
+          {
+            left: "\\(",
+            right: "\\)",
+            display: false
+          },
+          {
+            left: "\\[",
+            right: "\\]",
+            display: true
+          }
+        ],
+
+        ignoredTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code",
+          "option"
+        ],
+
+        throwOnError: false
+
+      })
+
+    })
+
+  })
+</script>
+
+</head>
+<body class="site-shell page-kind-page section-blog">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-brand" href="/" aria-label="返回清水阁首页">
+      <span class="site-brand__logo-slot" aria-hidden="true"><img class="site-brand__logo" src="/favicon.png" alt="" width="36" height="36"></span>
+      <span class="site-brand__text">清水阁</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主导航" data-site-nav>
+  <ul class="site-nav__list"><li class="site-nav__item site-nav__item--has-children"><button
+        class="site-nav__link site-nav__trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="qsg-menu-categories"
+        data-menu-trigger
+        data-menu-current="true"
+      >
+        <span>文章分类</span>
+        <svg class="site-nav__chevron" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="site-nav__submenu" id="qsg-menu-categories" data-menu-submenu><li class="site-nav__item"><a class="site-nav__link" href="/blog/" aria-current="page">全部文章</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%AF%97/">诗</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E6%96%87/">文</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%89%BA/">艺</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%AD%A6/">学</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul></li><li class="site-nav__item"><button class="site-nav__link site-nav__placeholder" type="button" title="撰文指南（待开发）" aria-label="撰文指南，待开发">
+        撰文指南
+      </button></li><li class="site-nav__item"><a class="site-nav__link" href="/blog/%E5%BB%BA%E7%AB%99%E5%BC%81%E8%A8%80/">建站弁言</a></li><li class="site-nav__item"><a class="site-nav__link" href="/almanac/2025/">年鉴2025</a></li><li class="site-nav__item site-nav__item--avatar"><button class="site-nav__avatar-link site-nav__placeholder" type="button" title="个人主页（待开发）" aria-label="个人主页，待开发">
+          <img class="site-nav__avatar" src="/qingshuige/defaults/avatar.png" alt="" width="36" height="36">
+        </button></li><li class="site-nav__item"><button class="qsg-search-trigger" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg></button></li></ul>
+</nav>
+  </div>
+</header>
+
+
+  <main id="main-content" class="site-main">
+    
+
+<article class="site-container article-single article-single--blog">
+
+  <header class="article-header">
+
+    
+<nav class="article-categories" aria-label="文章分类">
+    <a
+      class="article-category"
+      href="/categories/%E5%AD%A6/"
+      rel="tag"
+    >
+      学
+    </a>
+</nav>
+
+
+    <h1 class="article-title">
+      音乐哲学的数学原理
+    </h1>
+
+    <div class="article-meta">
+    <span class="article-meta__author">
+      线粒体
+    </span>
+    <time
+      class="article-meta__date"
+      datetime="2026-03-30T14:06:00&#43;08:00"
+    >
+      2026-03-30
+    </time>
+    <span class="article-meta__reading-time">
+      约 5 分钟阅读
+    </span>
+
+</div>
+
+
+  </header>
+  
+  
+
+  <div class="prose article-content">
+    <p>声音是由物体的振动产生的。从听觉上来说，振动频率越快，音调就越高；振动频率越慢，音调就越低。我们用$F=a\  \mathrm{Hz}$表示振动频率，其中$a \in (0, +\infty)$。</p>
+<p>那么既然$a$可以有无限个取值，是不是代表，我们可以用的<strong>音</strong>也是无穷？显然不是。对于人类来说，人耳生理上的限制决定我们并不能准确分辨所有的声音。比如，某两个音可能频率不同，但听起来一样；或者某个音频率太高或太低，根本听不见。</p>
+<p>首先我们探讨第一个问题，即人耳能听到的频率处于什么范围。根据研究，大部分人能够听到的频率介于$20\  \mathrm{Hz}$到$20000\  \mathrm{Hz}$之间。所以说，如果你想演奏人类能够欣赏的音乐，首先应当使得$a \in [20,20000]$。</p>
+<p>现在来探讨第二个问题：频率不同，是不是我们的耳朵就一定能准确感知这种不同？</p>
+<p>你可以使用一些设备播放一个特定频率的正弦波。首先将频率调到$440\  \mathrm{Hz}$，聆听一小会。然后调到$441\  \mathrm{Hz}$，你能分辨这两个音之间的不同吗？</p>
+<p>如此不断将频率调大，直到你可以明显感知到“音变高了”，观察频率数字，看看和$440\  \mathrm{Hz}$相差多少。对于一些听觉比较敏感的人，可能在调到$441\  \mathrm{Hz}$时马上就能感知到变化。但是对于一些听觉不那么敏感的人，可能要调到$443\  \mathrm{Hz}$乃至更高。这个简单的实验说明人耳对频率的分辨力是有一定限度的。所以，我们可用的频率$a$又缩小了，它的取值变成了一个离散集。</p>
+<p>让我们继续这个实验，依然从$440\  \mathrm{Hz}$开始，逐步上调频率。当然，这次你可以调得快一点，甚至直接按住按键，让频率连续快速增长。当一串滑音进入你的耳朵后，敏锐的听觉会捕捉到有一个“<strong>回归</strong>”的音。这个音听起来跟$440\  \mathrm{Hz}$非常相似，但是明显更高。这时候找到这个音的频率，发现是$880\  \mathrm{Hz}$。</p>
+<p>$880\  \mathrm{Hz}$可以有两种含义：一种是$440\  \mathrm{Hz}+440\  \mathrm{Hz}$，另一种是$440\  \mathrm{Hz} \times 2$。这时候我们会产生一个想法：如果我想再找到一个“回归”的音，应该将频率加上$440\  \mathrm{Hz}$还是乘以$2$呢？</p>
+<p>依然可以用实验来验证。将频率调到$880\  \mathrm{Hz} + 440\  \mathrm{Hz} = 1320\  \mathrm{Hz}$，和$880\  \mathrm{Hz}$比较，发现两个音好像没什么关系。再将频率调到$880\  \mathrm{Hz} \times 2 = 1760\  \mathrm{Hz}$，马上可以分辨出这个音又是一个“回归”的音。</p>
+<p>所以我们发现一个定律：频率$2^ka$在听觉上是回归的，其中$k \in \mathbb{Z}$。</p>
+<p>这样一来，我们能用的频率虽然没有发生什么变化，但是由于$\forall a$都有$2^ka$，所以真正可以称得上听起来“不重复”的频率，实际上只有$[2^ka, 2^{k+1}a]$这个区间。不管你选定怎样的$a$，对于任意一个$k$的取值所形成的各个区间，音都是“重复”的，只是音调的高低有所变化。</p>
+<p>所以我们的发挥空间一下子就变得非常有限。</p>
+<p>这时候你可能会说：没关系，反正人耳可以分辨$2\  \mathrm{Hz}$的频率变化。$[2^ka, 2^{k+1}a]$之中不是还有很多个$2\  \mathrm{Hz}$吗？所以可用的频率还是非常多的。</p>
+<p>确实，从数学上看，</p>
+<p>$$
+m = \frac{2^{k+1}a-2^ka}{2\  \mathrm{Hz}}
+$$</p>
+<p>随着$k$和$a$的增长，$m$会越来越大，也就是说我们可用的频率会越来越多。可惜很不幸的是，频率越高或越低，人耳的分辨力越差。而且即便是$2\  \mathrm{Hz}$的差异，也不足以用来形成音乐。因为音乐的要求是人能够快速分辨不同的音高，这就要求不同音高间差异应当足够明显。而且，如果这个区间内不同的音高太多，会增加大脑处理的负担。我们的大脑天生倾向于处理具有相似性的事物，包括音乐。所以我们采用的音高应该尽可能少，但又足以充分利用这个区间内的可用频率。</p>
+<p>我们使用的音，应该在各个区间内数量相等且“回归”。也就是说，第二个区间的第$n$个音，应当等于第一个区间第$n$音的$2$倍，以此类推。因此就不能采用$m$的算法，因为那样会导致不同的区间内音的数量不一样。</p>
+<p>那么每个区间内应该有多少个音最合适？</p>
+<p>经过世界各国在漫长历史过程中的实践，最终在当下，绝大多数音乐家都认为，每个区间内有$12$个音，最符合人类听觉和美感方面的要求。</p>
+<p>也就是说，假设以$a$作为第一个音，那么$2^{\frac{1}{12}}a$就是第二个音，$2^{\frac{2}{12}}a$就是第三个音……这样一来，对于任意$a$，在经过$12$个音后，都会“回归”到$2a$。</p>
+<p>比如，假设第一个音是$2^{\frac{2}{12}}a$，经过$12$个音，也就是</p>
+<p>$$
+2^{\frac{2}{12}}a \cdot 2^{\frac{1}{12} \cdot 12} = 2^\frac{14}{12}a = 2 \cdot 2^{\frac{2}{12}}a
+$$</p>
+<p>这称为“<strong>十二平均律</strong>”。</p>
+<p>你可能会产生疑问：为什么要把$2^ka$中的$k$分成$12$份，而不是把$2^{k+1}a - 2^ka$本身分成$12$份，也就是为什么不使用等差形式：</p>
+<p>$$\frac{2^{k+1}a - 2^ka}{12}$$</p>
+<p>这个问题又是另一个有趣的话题，可能还需要一篇文章来解释。</p>
+
+  </div>
+
+  <footer class="article-footer">
+    
+
+    <nav class="article-navigation" aria-label="文章导航">
+
+      
+
+      
+
+      <div class="article-navigation__posts">
+
+        <div class="article-navigation__previous">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E7%82%B9%E8%8F%9C%E5%9E%8B%E7%BB%8F%E6%B5%8E/"
+              rel="prev"
+            >
+
+              <span class="article-navigation__label">
+                ← 上一篇
+              </span>
+
+              <span class="article-navigation__title">
+                点菜型经济
+              </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="article-navigation__next">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E8%AE%BAvibe-coding%E6%9B%BF%E4%BB%A3%E7%A8%8B%E5%BA%8F%E5%91%98/"
+              rel="next"
+            >
+
+              <span class="article-navigation__label">
+                下一篇 →
+              </span>
+
+              <span class="article-navigation__title">
+                论Vibe Coding替代程序员
+              </span>
+
+            </a>
+
+        </div>
+
+      </div>
+
+
+    <div class="article-navigation__back">
+
+      <a href="/categories/%E5%AD%A6/">
+        返回「学」
+      </a>
+
+    </div>
+
+</nav>
+
+  </footer>
+
+</article>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>© 2026 清水阁</p>
+  </div>
+</footer>
+
+  <script defer src="/js/menu.323881ab00806207b47fbff37467f1e3e39190c2e57cc79d162ce6e050897d93.js" integrity="sha256-MjiBqwCAYge0f7/zdGfx4&#43;ORkMLlfMedFizm4FCJfZM=" crossorigin="anonymous"></script><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.c70c5027c0cb6f4970d2ad23fed658dc691c2c9d0fb45f00096df27129e675ef.js" integrity="sha256-xwxQJ8DLb0lw0q0j/tZY3GkcLJ0PtF8ACW3ycSnmde8=" crossorigin="anonymous"></script>
+</body>
+</html>

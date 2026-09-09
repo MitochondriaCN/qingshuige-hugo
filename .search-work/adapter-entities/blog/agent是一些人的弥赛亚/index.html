@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><title>Agent是一些人的弥赛亚 · 清水阁</title><meta name="description" content="之前经常听到一些朋友说，网上现在有很多「文科生用AI开发软件，脚踢理科生」的说法，十分引人发笑。我原先觉得怎么可能，我们文科生再不行也不会狂妄到这种地步——污名化！一定是污名化！然而今天我就看到了这样的一篇文章，打了我的老脸。作者在文中洋洋洒洒，描述自己和朋友怎样使用Agent做出软件，赚到第一桶金，把Agent快捧成新时代的珍妮机了。这不禁使我想到一位著名文科生巴金的一篇文章《机器的诗》。看来一些文科生多少是有点技术拜物教倾向的。圣经退出了书店和课本，弥赛亚却仍然活在一些人的脑中。文科生也好，理科生也好，赚钱的也好，没赚钱的也好，凡是对AI带有这种态度的，在我看来都是身处一场虚妄的狂欢节中而不自知。
+">
+
+<link rel="canonical" href="https://qingshuige.ink/blog/agent%E6%98%AF%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%9A%84%E5%BC%A5%E8%B5%9B%E4%BA%9A/">
+
+<link rel="stylesheet" href="/assets/qingshuige.1f39c2f793dfc658ae5e45e28d9186b4e01c76e0ed9b5c42a8040048381843cf.css" integrity="sha256-HznC95PfxliuXkXijZGGtOAcduDtm1xCqAQASDgYQ88=" crossorigin="anonymous"><link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+  integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+  crossorigin="anonymous"
+>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+  integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+  crossorigin="anonymous"
+></script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof renderMathInElement !== "function") {
+      return
+    }
+
+    const contentAreas = document.querySelectorAll(".prose")
+
+    contentAreas.forEach((content) => {
+
+      renderMathInElement(content, {
+
+        delimiters: [
+          {
+            left: "$$",
+            right: "$$",
+            display: true
+          },
+          {
+            left: "$",
+            right: "$",
+            display: false
+          },
+          {
+            left: "\\(",
+            right: "\\)",
+            display: false
+          },
+          {
+            left: "\\[",
+            right: "\\]",
+            display: true
+          }
+        ],
+
+        ignoredTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code",
+          "option"
+        ],
+
+        throwOnError: false
+
+      })
+
+    })
+
+  })
+</script>
+
+</head>
+<body class="site-shell page-kind-page section-blog">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-brand" href="/" aria-label="返回清水阁首页">
+      <span class="site-brand__logo-slot" aria-hidden="true"><img class="site-brand__logo" src="/favicon.png" alt="" width="36" height="36"></span>
+      <span class="site-brand__text">清水阁</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主导航" data-site-nav>
+  <ul class="site-nav__list"><li class="site-nav__item site-nav__item--has-children"><button
+        class="site-nav__link site-nav__trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="qsg-menu-categories"
+        data-menu-trigger
+        data-menu-current="true"
+      >
+        <span>文章分类</span>
+        <svg class="site-nav__chevron" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="site-nav__submenu" id="qsg-menu-categories" data-menu-submenu><li class="site-nav__item"><a class="site-nav__link" href="/blog/" aria-current="page">全部文章</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%AF%97/">诗</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E6%96%87/">文</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%89%BA/">艺</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%AD%A6/">学</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul></li><li class="site-nav__item"><button class="site-nav__link site-nav__placeholder" type="button" title="撰文指南（待开发）" aria-label="撰文指南，待开发">
+        撰文指南
+      </button></li><li class="site-nav__item"><a class="site-nav__link" href="/blog/%E5%BB%BA%E7%AB%99%E5%BC%81%E8%A8%80/">建站弁言</a></li><li class="site-nav__item"><a class="site-nav__link" href="/almanac/2025/">年鉴2025</a></li><li class="site-nav__item site-nav__item--avatar"><button class="site-nav__avatar-link site-nav__placeholder" type="button" title="个人主页（待开发）" aria-label="个人主页，待开发">
+          <img class="site-nav__avatar" src="/qingshuige/defaults/avatar.png" alt="" width="36" height="36">
+        </button></li><li class="site-nav__item"><button class="qsg-search-trigger" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg></button></li></ul>
+</nav>
+  </div>
+</header>
+
+
+  <main id="main-content" class="site-main">
+    
+
+<article class="site-container article-single article-single--blog">
+
+  <header class="article-header">
+
+    
+<nav class="article-categories" aria-label="文章分类">
+    <a
+      class="article-category"
+      href="/categories/%E5%AD%A6/"
+      rel="tag"
+    >
+      学
+    </a>
+</nav>
+
+
+    <h1 class="article-title">
+      Agent是一些人的弥赛亚
+    </h1>
+
+    <div class="article-meta">
+    <span class="article-meta__author">
+      线粒体
+    </span>
+    <time
+      class="article-meta__date"
+      datetime="2026-06-04T17:31:00&#43;08:00"
+    >
+      2026-06-04
+    </time>
+    <span class="article-meta__reading-time">
+      约 3 分钟阅读
+    </span>
+
+</div>
+
+
+  </header>
+  
+  
+
+  <div class="prose article-content">
+    <p>之前经常听到一些朋友说，网上现在有很多「文科生用AI开发软件，脚踢理科生」的说法，十分引人发笑。我原先觉得怎么可能，我们文科生再不行也不会狂妄到这种地步——污名化！一定是污名化！然而今天我就看到了这样的一篇文章，打了我的老脸。作者在文中洋洋洒洒，描述自己和朋友怎样使用Agent做出软件，赚到第一桶金，把Agent快捧成新时代的珍妮机了。这不禁使我想到一位著名文科生巴金的一篇文章《机器的诗》。看来一些文科生多少是有点技术拜物教倾向的。圣经退出了书店和课本，弥赛亚却仍然活在一些人的脑中。文科生也好，理科生也好，赚钱的也好，没赚钱的也好，凡是对AI带有这种态度的，在我看来都是身处一场虚妄的狂欢节中而不自知。</p>
+<p>那么让我们正本清源——他们所说的Agent赚钱的本质究竟是什么呢？</p>
+<p>软件是一种商品，商品可以用来买卖。通过生产软件—出售软件，就可以赚钱——这就是软件这门生意的本质原理。</p>
+<p>过去只有懂得一定开发技术的人才能生产软件，而在中国，这门技术在大学中一般只有理科生才可以正式学习。所以一些做题家们便自然而然地把「写软件」和「理科生」联系在一起，「文科生」是「写软件」这件事的对立面。这个预设的立场首先就糊弄了很多人。这个预设可谓威力无穷，因为这样一来，理科生写出软件就变成天经地义，文科生写出软件就成了一件惊天地泣鬼神的事。这和「女生居然会修电脑」、「理科生居然会作诗」本质相同。</p>
+<p>立场立住了，接下来就要考虑文科生怎么写出软件。以前基本上是没有办法的，现在有了Agent，文科生也可以写软件。实际上本质还是花钱雇人帮他写，只是薪酬低到令人发指，但我们对此暂且按下不表。总之现在文科生也能写出软件。以前我们连镰刀都没有，现在我们用上了联合收割机，不管怎么说，这也算一种进步。</p>
+<p>那好吧，理科生也能写软件，文科生也能写软件，这有什么区别呢？但是有了刚才那个预设立场，区别就很大了：文科生明显更厉害一点嘛！这就是一种典型的自我矮化再自我拔高的手法。</p>
+<p>随后，文理科生都想赚钱，但是商业上没有人管你是文科生还是理科生。你的软件能不能卖出去，由很多因素决定。这是单纯读几本书、学几门语言所解决不了的。比如我认识某个公司的老板，他说他想要一套ERP系统，我手头刚好就有一套，那么我就可以卖给他，其他人就没有机会。所以这个钱才能被我赚到。现实生活中，大量的商机不都是这样产生的吗？特别是私活，更是依赖人脉疏通。不然有货无市，不管是文科生还是理科生，恐怕都是束手无策的。</p>
+<p>到这里，一些人中龙凤各显神通，成功地把自己的软件卖出去了。但是其中香槟开得最多的，恰恰是一部分文科生。因为他们觉得，自己能卖出去软件，是一个技术成就，而不是一个商业成就。技术因素是$A$，商业因素是$B$，那笔钱是$C$。$A+B \Rightarrow C$和$A \Rightarrow C$，他们搞混淆了。好像把软件写出来，就能自然而然地卖出去。实际上怎么可能是这样？多少人的软件砸手里了。</p>
+<p>幸存者偏差！我只看到一些幸运儿，把自己怎么接单、怎么洽谈的过程隐藏起来，把功劳全部归于Agent，以此误导广大不明真相的群众。</p>
+<p>而且，这类人往往是最有「高人一等」的错觉的。我看的那篇文章的作者，就觉得大部分人用AI改论文、问问题，已经是很低级的用法了，他已经看不上了。还告诉大家要用AI来「帮你干活」。有一种「新大陆是我发现」的感觉，有一种「众人皆醉我独醒」的感觉，有一种「悟已往之不谏，知来者之可追」的感觉，有一种「Let there be light」的感觉。</p>
+<p>这种行为本身恰恰是对我们文科生的污名化。</p>
+
+  </div>
+
+  <footer class="article-footer">
+    
+
+    <nav class="article-navigation" aria-label="文章导航">
+
+      
+
+      
+
+      <div class="article-navigation__posts">
+
+        <div class="article-navigation__previous">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E9%97%AE%E9%A2%98/"
+              rel="prev"
+            >
+
+              <span class="article-navigation__label">
+                ← 上一篇
+              </span>
+
+              <span class="article-navigation__title">
+                AI客户端的上下文问题
+              </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="article-navigation__next">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E5%85%8D%E8%B4%B9%E7%9A%84%E6%89%8D%E6%98%AF%E6%9C%80%E8%B4%B5%E7%9A%84/"
+              rel="next"
+            >
+
+              <span class="article-navigation__label">
+                下一篇 →
+              </span>
+
+              <span class="article-navigation__title">
+                免费的才是最贵的
+              </span>
+
+            </a>
+
+        </div>
+
+      </div>
+
+
+    <div class="article-navigation__back">
+
+      <a href="/categories/%E5%AD%A6/">
+        返回「学」
+      </a>
+
+    </div>
+
+</nav>
+
+  </footer>
+
+</article>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>© 2026 清水阁</p>
+  </div>
+</footer>
+
+  <script defer src="/js/menu.323881ab00806207b47fbff37467f1e3e39190c2e57cc79d162ce6e050897d93.js" integrity="sha256-MjiBqwCAYge0f7/zdGfx4&#43;ORkMLlfMedFizm4FCJfZM=" crossorigin="anonymous"></script><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.be68fa1d4aee01f6e249a9399d589844f97f8abb396db06dbc1ee4afe496dc7e.js" integrity="sha256-vmj6HUruAfbiSak5nViYRPl/irs5bbBtvB7kr&#43;SW3H4=" crossorigin="anonymous"></script>
+</body>
+</html>

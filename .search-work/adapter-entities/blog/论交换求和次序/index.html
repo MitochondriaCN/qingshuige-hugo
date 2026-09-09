@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><title>论交换求和次序 · 清水阁</title><meta name="description" content="今天读TAOCP过程中，对书中提到的交换求和次序公式加以关注：
+$$ \sum_{i=1}^{n} \sum_{j=1}^{i} a_{ij} = \sum_{j=1}^{n} \sum_{i=j}^{n} a_{ij}. \tag{1} $$
+书上给出了代数的证明方法，但一开始我不是很懂，便自己琢磨着证明. 我想到的方法是“几何法”——其实也并不是什么几何，只不过是将等式左右两边的加法按行列出来，最后再找规律罢了，完全是小学生水平. 于是我得到了以下的结果：
+">
+
+<link rel="canonical" href="https://qingshuige.ink/blog/%E8%AE%BA%E4%BA%A4%E6%8D%A2%E6%B1%82%E5%92%8C%E6%AC%A1%E5%BA%8F/">
+
+<link rel="stylesheet" href="/assets/qingshuige.1f39c2f793dfc658ae5e45e28d9186b4e01c76e0ed9b5c42a8040048381843cf.css" integrity="sha256-HznC95PfxliuXkXijZGGtOAcduDtm1xCqAQASDgYQ88=" crossorigin="anonymous"><link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+  integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+  crossorigin="anonymous"
+>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+  integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+  crossorigin="anonymous"
+></script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof renderMathInElement !== "function") {
+      return
+    }
+
+    const contentAreas = document.querySelectorAll(".prose")
+
+    contentAreas.forEach((content) => {
+
+      renderMathInElement(content, {
+
+        delimiters: [
+          {
+            left: "$$",
+            right: "$$",
+            display: true
+          },
+          {
+            left: "$",
+            right: "$",
+            display: false
+          },
+          {
+            left: "\\(",
+            right: "\\)",
+            display: false
+          },
+          {
+            left: "\\[",
+            right: "\\]",
+            display: true
+          }
+        ],
+
+        ignoredTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code",
+          "option"
+        ],
+
+        throwOnError: false
+
+      })
+
+    })
+
+  })
+</script>
+
+</head>
+<body class="site-shell page-kind-page section-blog">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-brand" href="/" aria-label="返回清水阁首页">
+      <span class="site-brand__logo-slot" aria-hidden="true"><img class="site-brand__logo" src="/favicon.png" alt="" width="36" height="36"></span>
+      <span class="site-brand__text">清水阁</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主导航" data-site-nav>
+  <ul class="site-nav__list"><li class="site-nav__item site-nav__item--has-children"><button
+        class="site-nav__link site-nav__trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="qsg-menu-categories"
+        data-menu-trigger
+        data-menu-current="true"
+      >
+        <span>文章分类</span>
+        <svg class="site-nav__chevron" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="site-nav__submenu" id="qsg-menu-categories" data-menu-submenu><li class="site-nav__item"><a class="site-nav__link" href="/blog/" aria-current="page">全部文章</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%AF%97/">诗</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E6%96%87/">文</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%89%BA/">艺</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%AD%A6/">学</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul></li><li class="site-nav__item"><button class="site-nav__link site-nav__placeholder" type="button" title="撰文指南（待开发）" aria-label="撰文指南，待开发">
+        撰文指南
+      </button></li><li class="site-nav__item"><a class="site-nav__link" href="/blog/%E5%BB%BA%E7%AB%99%E5%BC%81%E8%A8%80/">建站弁言</a></li><li class="site-nav__item"><a class="site-nav__link" href="/almanac/2025/">年鉴2025</a></li><li class="site-nav__item site-nav__item--avatar"><button class="site-nav__avatar-link site-nav__placeholder" type="button" title="个人主页（待开发）" aria-label="个人主页，待开发">
+          <img class="site-nav__avatar" src="/qingshuige/defaults/avatar.png" alt="" width="36" height="36">
+        </button></li><li class="site-nav__item"><button class="qsg-search-trigger" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg></button></li></ul>
+</nav>
+  </div>
+</header>
+
+
+  <main id="main-content" class="site-main">
+    
+
+<article class="site-container article-single article-single--blog">
+
+  <header class="article-header">
+
+    
+<nav class="article-categories" aria-label="文章分类">
+    <a
+      class="article-category"
+      href="/categories/%E5%AD%A6/"
+      rel="tag"
+    >
+      学
+    </a>
+</nav>
+
+
+    <h1 class="article-title">
+      论交换求和次序
+    </h1>
+
+    <div class="article-meta">
+    <span class="article-meta__author">
+      线粒体
+    </span>
+    <time
+      class="article-meta__date"
+      datetime="2025-09-21T18:19:18&#43;08:00"
+    >
+      2025-09-21
+    </time>
+    <span class="article-meta__reading-time">
+      约 2 分钟阅读
+    </span>
+
+</div>
+
+
+  </header>
+  
+  
+
+  <div class="prose article-content">
+    <p>今天读<em>TAOCP</em>过程中，对书中提到的交换求和次序公式加以关注：</p>
+<p>$$
+\sum_{i=1}^{n} \sum_{j=1}^{i} a_{ij} = \sum_{j=1}^{n} \sum_{i=j}^{n} a_{ij}. \tag{1}
+$$</p>
+<p>书上给出了代数的证明方法，但一开始我不是很懂，便自己琢磨着证明. 我想到的方法是“几何法”——其实也并不是什么几何，只不过是将等式左右两边的加法按行列出来，最后再找规律罢了，完全是小学生水平. 于是我得到了以下的结果：</p>
+<p>我们不妨设$n=4$，于是看到：</p>
+<p>$$\left{ \begin{array}{llll}
+a_{11} \
+a_{21} &amp; a_{22} \
+a_{31} &amp; a_{32} &amp; a_{33} \
+a_{41} &amp; a_{42} &amp; a_{43} &amp; a_{44} \
+\end{array} \right} =
+\left{ \begin{array}{llll}
+a_{11} &amp; a_{21} &amp; a_{31} &amp; a_{41} \
+&amp; a_{22} &amp; a_{32} &amp; a_{42} \
+&amp; &amp; a_{33} &amp; a_{43} \
+&amp; &amp; &amp;a_{44}
+\end{array} \right}.$$</p>
+<p>这样一来就可以发现，将等号左边顺时针旋转90°（当然，为了直观，我还进行了水平镜像翻转），就可以得到等号右边. 如果我们将求和过程看作是从上到下一行一行进行的，那么这可以很好地解释$(1)$的原理：先将$i$固定再变化$j$，和先将$j$固定再变化$i$，结果是一样的，都可以取遍所有的$(i,j)$.</p>
+<p>这个时候我想到将其推而广之：再将这个行列旋转90°（并翻转），是否会得到一个新的代数结果？对于一些十分有天赋的数学天才，大概会认为无论写出多少这样的式子，最终还是得出一个相同的索引集，所以这是一项没有意义的研究. 可能在他们看来这无非是摆弄算术，根本算不上深刻的数学. 好吧，我自认我的智商和天赋远不如他们，恐怕也就只好摆弄摆弄算术. 我将行列旋转90°，得到了如下结果：</p>
+<p>$$\left{ \begin{array}{llll}
+a_{11} &amp; a_{21} &amp; a_{31} &amp; a_{41} \
+a_{22} &amp; a_{32} &amp; a_{42} \
+a_{33} &amp; a_{43} \
+a_{44}
+\end{array} \right} =
+\left{ \begin{array}{llll}
+a_{11} &amp; a_{22} &amp; a_{33} &amp; a_{44} \
+a_{21} &amp; a_{32} &amp; a_{43} \
+a_{31} &amp; a_{42} \
+a_{41}
+\end{array} \right}.$$</p>
+<p>通过对等号右边找规律并归纳，注意到：</p>
+<p>$$\begin{aligned}
+\sum_{j=1}^{n} \sum_{i=j}^{n} a_{ij} &amp;= \sum_{i=1}^{n} a_{ii} + \sum_{i=2}^{n} a_{i(i-1)} + \sum_{i=3}^{n} a_{i(i-2)} + \dots + \sum_{i=n}^{n} a_{i1} \
+&amp;= \sum_{j=1}^{n} \sum_{i=j}^{n} a_{i(i-(j-1))} \
+&amp;= \sum_{j=1}^{n} \sum_{i=j}^{n} a_{i(i-j+1)}.
+\end{aligned} \tag{2}$$</p>
+<p>整合$(1)$和$(2)$，得到：</p>
+<p>$$\sum_{i=1}^{n} \sum_{j=1}^{i} a_{ij} = \sum_{j=1}^{n} \sum_{i=j}^{n} a_{ij} = \sum_{j=1}^{n} \sum_{i=j}^{n} a_{i(i-j+1)}. \tag{3}$$</p>
+<p>这时我想到《数学分析新讲》中的一句话：“基于以上简单的观察，得到了很有用的结果. ”当然，我不敢自诩我的结果是有用的，但是我的观察确实足够简单.</p>
+<p>这是一个双重求和的交换求和次序问题. 假设我们将其推广到$k$重求和，能否得到一个普遍性的式子？这可能是一个很有意思的话题. 我确实不知道这有什么用，毕竟我只是一枚蠢材. 后来我才发现，这实际上就是对一开始那个行列分别按行优先、列优先、对角线优先求和，没有什么秘密可言. 但是这是我人生中第一个独立发现的定理，虽然没什么技术含量，但我很高兴，我终于感受到做数学是一件如此令人满足的事情.</p>
+
+  </div>
+
+  <footer class="article-footer">
+    
+
+    <nav class="article-navigation" aria-label="文章导航">
+
+      
+
+      
+
+      <div class="article-navigation__posts">
+
+        <div class="article-navigation__previous">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E8%AE%BA%E4%BF%A1%E6%81%AF%E7%88%86%E7%82%B8%E4%B8%8E%E7%88%86%E7%82%B8%E4%BF%A1%E6%81%AF/"
+              rel="prev"
+            >
+
+              <span class="article-navigation__label">
+                ← 上一篇
+              </span>
+
+              <span class="article-navigation__title">
+                论信息爆炸与爆炸信息
+              </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="article-navigation__next">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4%E5%AD%A6%E5%9B%AD%E9%83%BD%E5%B8%82%E6%98%AF%E7%A4%BE%E4%BC%9A%E5%8C%96%E5%A4%B1%E8%B4%A5%E5%AD%A6%E7%94%9F%E7%BE%A4%E4%BD%93%E7%9A%84%E5%B9%BB%E6%83%B3/"
+              rel="next"
+            >
+
+              <span class="article-navigation__label">
+                下一篇 →
+              </span>
+
+              <span class="article-navigation__title">
+                为什么说“学园都市”是社会化失败学生群体的幻想
+              </span>
+
+            </a>
+
+        </div>
+
+      </div>
+
+
+    <div class="article-navigation__back">
+
+      <a href="/categories/%E5%AD%A6/">
+        返回「学」
+      </a>
+
+    </div>
+
+</nav>
+
+  </footer>
+
+</article>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>© 2026 清水阁</p>
+  </div>
+</footer>
+
+  <script defer src="/js/menu.323881ab00806207b47fbff37467f1e3e39190c2e57cc79d162ce6e050897d93.js" integrity="sha256-MjiBqwCAYge0f7/zdGfx4&#43;ORkMLlfMedFizm4FCJfZM=" crossorigin="anonymous"></script><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.be68fa1d4aee01f6e249a9399d589844f97f8abb396db06dbc1ee4afe496dc7e.js" integrity="sha256-vmj6HUruAfbiSak5nViYRPl/irs5bbBtvB7kr&#43;SW3H4=" crossorigin="anonymous"></script>
+</body>
+</html>

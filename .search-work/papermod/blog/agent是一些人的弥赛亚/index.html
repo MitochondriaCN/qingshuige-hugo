@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Agent是一些人的弥赛亚 | 清水阁</title>
+<meta name="keywords" content="">
+<meta name="description" content="之前经常听到一些朋友说，网上现在有很多「文科生用AI开发软件，脚踢理科生」的说法，十分引人发笑。我原先觉得怎么可能，我们文科生再不行也不会狂妄到这种地步——污名化！一定是污名化！然而今天我就看到了这样的一篇文章，打了我的老脸。作者在文中洋洋洒洒，描述自己和朋友怎样使用Agent做出软件，赚到第一桶金，把Agent快捧成新时代的珍妮机了。这不禁使我想到一位著名文科生巴金的一篇文章《机器的诗》。看来一些文科生多少是有点技术拜物教倾向的。圣经退出了书店和课本，弥赛亚却仍然活在一些人的脑中。文科生也好，理科生也好，赚钱的也好，没赚钱的也好，凡是对AI带有这种态度的，在我看来都是身处一场虚妄的狂欢节中而不自知。">
+<meta name="author" content="线粒体">
+<link rel="canonical" href="https://qingshuige.ink/blog/agent%E6%98%AF%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%9A%84%E5%BC%A5%E8%B5%9B%E4%BA%9A/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.a29c24210eb31d9ce56f669c66a35c9c51b17376b7764e336a49af7dec914cf0.css" integrity="sha256-opwkIQ6zHZzlb2acZqNcnFGxc3a3dk4zakmvfeyRTPA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://qingshuige.ink/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://qingshuige.ink/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://qingshuige.ink/favicon.png">
+<link rel="apple-touch-icon" href="https://qingshuige.ink/apple-touch-icon.png">
+<link rel="mask-icon" href="https://qingshuige.ink/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://qingshuige.ink/blog/agent%E6%98%AF%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%9A%84%E5%BC%A5%E8%B5%9B%E4%BA%9A/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css" integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js" integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          
+          throwOnError : false
+        });
+    });
+</script>
+
+
+<link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+
+<meta property="og:url" content="https://qingshuige.ink/blog/agent%E6%98%AF%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%9A%84%E5%BC%A5%E8%B5%9B%E4%BA%9A/">
+  <meta property="og:site_name" content="清水阁">
+  <meta property="og:title" content="Agent是一些人的弥赛亚">
+  <meta property="og:description" content="之前经常听到一些朋友说，网上现在有很多「文科生用AI开发软件，脚踢理科生」的说法，十分引人发笑。我原先觉得怎么可能，我们文科生再不行也不会狂妄到这种地步——污名化！一定是污名化！然而今天我就看到了这样的一篇文章，打了我的老脸。作者在文中洋洋洒洒，描述自己和朋友怎样使用Agent做出软件，赚到第一桶金，把Agent快捧成新时代的珍妮机了。这不禁使我想到一位著名文科生巴金的一篇文章《机器的诗》。看来一些文科生多少是有点技术拜物教倾向的。圣经退出了书店和课本，弥赛亚却仍然活在一些人的脑中。文科生也好，理科生也好，赚钱的也好，没赚钱的也好，凡是对AI带有这种态度的，在我看来都是身处一场虚妄的狂欢节中而不自知。">
+  <meta property="og:locale" content="zh-Hans">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2026-06-04T17:31:00+08:00">
+    <meta property="article:modified_time" content="2026-06-04T17:31:00+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Agent是一些人的弥赛亚">
+<meta name="twitter:description" content="之前经常听到一些朋友说，网上现在有很多「文科生用AI开发软件，脚踢理科生」的说法，十分引人发笑。我原先觉得怎么可能，我们文科生再不行也不会狂妄到这种地步——污名化！一定是污名化！然而今天我就看到了这样的一篇文章，打了我的老脸。作者在文中洋洋洒洒，描述自己和朋友怎样使用Agent做出软件，赚到第一桶金，把Agent快捧成新时代的珍妮机了。这不禁使我想到一位著名文科生巴金的一篇文章《机器的诗》。看来一些文科生多少是有点技术拜物教倾向的。圣经退出了书店和课本，弥赛亚却仍然活在一些人的脑中。文科生也好，理科生也好，赚钱的也好，没赚钱的也好，凡是对AI带有这种态度的，在我看来都是身处一场虚妄的狂欢节中而不自知。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Blogs",
+      "item": "https://qingshuige.ink/blog/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Agent是一些人的弥赛亚",
+      "item": "https://qingshuige.ink/blog/agent%E6%98%AF%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%9A%84%E5%BC%A5%E8%B5%9B%E4%BA%9A/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Agent是一些人的弥赛亚",
+  "name": "Agent是一些人的弥赛亚",
+  "description": "之前经常听到一些朋友说，网上现在有很多「文科生用AI开发软件，脚踢理科生」的说法，十分引人发笑。我原先觉得怎么可能，我们文科生再不行也不会狂妄到这种地步——污名化！一定是污名化！然而今天我就看到了这样的一篇文章，打了我的老脸。作者在文中洋洋洒洒，描述自己和朋友怎样使用Agent做出软件，赚到第一桶金，把Agent快捧成新时代的珍妮机了。这不禁使我想到一位著名文科生巴金的一篇文章《机器的诗》。看来一些文科生多少是有点技术拜物教倾向的。圣经退出了书店和课本，弥赛亚却仍然活在一些人的脑中。文科生也好，理科生也好，赚钱的也好，没赚钱的也好，凡是对AI带有这种态度的，在我看来都是身处一场虚妄的狂欢节中而不自知。\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "之前经常听到一些朋友说，网上现在有很多「文科生用AI开发软件，脚踢理科生」的说法，十分引人发笑。我原先觉得怎么可能，我们文科生再不行也不会狂妄到这种地步——污名化！一定是污名化！然而今天我就看到了这样的一篇文章，打了我的老脸。作者在文中洋洋洒洒，描述自己和朋友怎样使用Agent做出软件，赚到第一桶金，把Agent快捧成新时代的珍妮机了。这不禁使我想到一位著名文科生巴金的一篇文章《机器的诗》。看来一些文科生多少是有点技术拜物教倾向的。圣经退出了书店和课本，弥赛亚却仍然活在一些人的脑中。文科生也好，理科生也好，赚钱的也好，没赚钱的也好，凡是对AI带有这种态度的，在我看来都是身处一场虚妄的狂欢节中而不自知。\n那么让我们正本清源——他们所说的Agent赚钱的本质究竟是什么呢？\n软件是一种商品，商品可以用来买卖。通过生产软件—出售软件，就可以赚钱——这就是软件这门生意的本质原理。\n过去只有懂得一定开发技术的人才能生产软件，而在中国，这门技术在大学中一般只有理科生才可以正式学习。所以一些做题家们便自然而然地把「写软件」和「理科生」联系在一起，「文科生」是「写软件」这件事的对立面。这个预设的立场首先就糊弄了很多人。这个预设可谓威力无穷，因为这样一来，理科生写出软件就变成天经地义，文科生写出软件就成了一件惊天地泣鬼神的事。这和「女生居然会修电脑」、「理科生居然会作诗」本质相同。\n立场立住了，接下来就要考虑文科生怎么写出软件。以前基本上是没有办法的，现在有了Agent，文科生也可以写软件。实际上本质还是花钱雇人帮他写，只是薪酬低到令人发指，但我们对此暂且按下不表。总之现在文科生也能写出软件。以前我们连镰刀都没有，现在我们用上了联合收割机，不管怎么说，这也算一种进步。\n那好吧，理科生也能写软件，文科生也能写软件，这有什么区别呢？但是有了刚才那个预设立场，区别就很大了：文科生明显更厉害一点嘛！这就是一种典型的自我矮化再自我拔高的手法。\n随后，文理科生都想赚钱，但是商业上没有人管你是文科生还是理科生。你的软件能不能卖出去，由很多因素决定。这是单纯读几本书、学几门语言所解决不了的。比如我认识某个公司的老板，他说他想要一套ERP系统，我手头刚好就有一套，那么我就可以卖给他，其他人就没有机会。所以这个钱才能被我赚到。现实生活中，大量的商机不都是这样产生的吗？特别是私活，更是依赖人脉疏通。不然有货无市，不管是文科生还是理科生，恐怕都是束手无策的。\n到这里，一些人中龙凤各显神通，成功地把自己的软件卖出去了。但是其中香槟开得最多的，恰恰是一部分文科生。因为他们觉得，自己能卖出去软件，是一个技术成就，而不是一个商业成就。技术因素是$A$，商业因素是$B$，那笔钱是$C$。$A+B \\Rightarrow C$和$A \\Rightarrow C$，他们搞混淆了。好像把软件写出来，就能自然而然地卖出去。实际上怎么可能是这样？多少人的软件砸手里了。\n幸存者偏差！我只看到一些幸运儿，把自己怎么接单、怎么洽谈的过程隐藏起来，把功劳全部归于Agent，以此误导广大不明真相的群众。\n而且，这类人往往是最有「高人一等」的错觉的。我看的那篇文章的作者，就觉得大部分人用AI改论文、问问题，已经是很低级的用法了，他已经看不上了。还告诉大家要用AI来「帮你干活」。有一种「新大陆是我发现」的感觉，有一种「众人皆醉我独醒」的感觉，有一种「悟已往之不谏，知来者之可追」的感觉，有一种「Let there be light」的感觉。\n这种行为本身恰恰是对我们文科生的污名化。\n",
+  "wordCount" : "1436",
+  "inLanguage": "zh",
+  "datePublished": "2026-06-04T17:31:00+08:00",
+  "dateModified": "2026-06-04T17:31:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "线粒体"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://qingshuige.ink/blog/agent%E6%98%AF%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%9A%84%E5%BC%A5%E8%B5%9B%E4%BA%9A/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "清水阁",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://qingshuige.ink/favicon.png"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://qingshuige.ink/" accesskey="h" title="清水阁 (Alt + H)">清水阁</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://qingshuige.ink/categories/%E6%96%87/" title="文">
+                    <span>文</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/categories/%E8%AF%97/" title="诗">
+                    <span>诗</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/categories/%E8%89%BA/" title="艺">
+                    <span>艺</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/categories/%E5%AD%A6/" title="学">
+                    <span>学</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/categories/%E5%85%B6%E4%BB%96/" title="其他">
+                    <span>其他</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://qingshuige.ink/files/qingshuige-annual-2025.pdf" title="年鉴2025">
+                    <span>年鉴2025</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Agent是一些人的弥赛亚
+    </h1>
+    <div class="post-meta"><span title='2026-06-04 17:31:00 +0800 CST'>2026年6月4日</span>&nbsp;·&nbsp;<span>线粒体</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>之前经常听到一些朋友说，网上现在有很多「文科生用AI开发软件，脚踢理科生」的说法，十分引人发笑。我原先觉得怎么可能，我们文科生再不行也不会狂妄到这种地步——污名化！一定是污名化！然而今天我就看到了这样的一篇文章，打了我的老脸。作者在文中洋洋洒洒，描述自己和朋友怎样使用Agent做出软件，赚到第一桶金，把Agent快捧成新时代的珍妮机了。这不禁使我想到一位著名文科生巴金的一篇文章《机器的诗》。看来一些文科生多少是有点技术拜物教倾向的。圣经退出了书店和课本，弥赛亚却仍然活在一些人的脑中。文科生也好，理科生也好，赚钱的也好，没赚钱的也好，凡是对AI带有这种态度的，在我看来都是身处一场虚妄的狂欢节中而不自知。</p>
+<p>那么让我们正本清源——他们所说的Agent赚钱的本质究竟是什么呢？</p>
+<p>软件是一种商品，商品可以用来买卖。通过生产软件—出售软件，就可以赚钱——这就是软件这门生意的本质原理。</p>
+<p>过去只有懂得一定开发技术的人才能生产软件，而在中国，这门技术在大学中一般只有理科生才可以正式学习。所以一些做题家们便自然而然地把「写软件」和「理科生」联系在一起，「文科生」是「写软件」这件事的对立面。这个预设的立场首先就糊弄了很多人。这个预设可谓威力无穷，因为这样一来，理科生写出软件就变成天经地义，文科生写出软件就成了一件惊天地泣鬼神的事。这和「女生居然会修电脑」、「理科生居然会作诗」本质相同。</p>
+<p>立场立住了，接下来就要考虑文科生怎么写出软件。以前基本上是没有办法的，现在有了Agent，文科生也可以写软件。实际上本质还是花钱雇人帮他写，只是薪酬低到令人发指，但我们对此暂且按下不表。总之现在文科生也能写出软件。以前我们连镰刀都没有，现在我们用上了联合收割机，不管怎么说，这也算一种进步。</p>
+<p>那好吧，理科生也能写软件，文科生也能写软件，这有什么区别呢？但是有了刚才那个预设立场，区别就很大了：文科生明显更厉害一点嘛！这就是一种典型的自我矮化再自我拔高的手法。</p>
+<p>随后，文理科生都想赚钱，但是商业上没有人管你是文科生还是理科生。你的软件能不能卖出去，由很多因素决定。这是单纯读几本书、学几门语言所解决不了的。比如我认识某个公司的老板，他说他想要一套ERP系统，我手头刚好就有一套，那么我就可以卖给他，其他人就没有机会。所以这个钱才能被我赚到。现实生活中，大量的商机不都是这样产生的吗？特别是私活，更是依赖人脉疏通。不然有货无市，不管是文科生还是理科生，恐怕都是束手无策的。</p>
+<p>到这里，一些人中龙凤各显神通，成功地把自己的软件卖出去了。但是其中香槟开得最多的，恰恰是一部分文科生。因为他们觉得，自己能卖出去软件，是一个技术成就，而不是一个商业成就。技术因素是$A$，商业因素是$B$，那笔钱是$C$。$A+B \Rightarrow C$和$A \Rightarrow C$，他们搞混淆了。好像把软件写出来，就能自然而然地卖出去。实际上怎么可能是这样？多少人的软件砸手里了。</p>
+<p>幸存者偏差！我只看到一些幸运儿，把自己怎么接单、怎么洽谈的过程隐藏起来，把功劳全部归于Agent，以此误导广大不明真相的群众。</p>
+<p>而且，这类人往往是最有「高人一等」的错觉的。我看的那篇文章的作者，就觉得大部分人用AI改论文、问问题，已经是很低级的用法了，他已经看不上了。还告诉大家要用AI来「帮你干活」。有一种「新大陆是我发现」的感觉，有一种「众人皆醉我独醒」的感觉，有一种「悟已往之不谏，知来者之可追」的感觉，有一种「Let there be light」的感觉。</p>
+<p>这种行为本身恰恰是对我们文科生的污名化。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://qingshuige.ink/blog/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E9%97%AE%E9%A2%98/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>AI客户端的上下文问题</span>
+  </a>
+  <a class="next" href="https://qingshuige.ink/blog/%E8%AE%B0%E5%8D%81%E4%B9%9D%E5%B1%8A%E8%BD%AF%E5%88%9B%E5%86%B3%E8%B5%9B/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>记十九届软创决赛</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://qingshuige.ink/">清水阁</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a><button class="qsg-search-trigger qsg-search-trigger--floating" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg><span>搜索</span></button><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.c70c5027c0cb6f4970d2ad23fed658dc691c2c9d0fb45f00096df27129e675ef.js" integrity="sha256-xwxQJ8DLb0lw0q0j/tZY3GkcLJ0PtF8ACW3ycSnmde8=" crossorigin="anonymous"></script>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

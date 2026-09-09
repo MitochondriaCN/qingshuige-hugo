@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><title>AI客户端的上下文问题 · 清水阁</title><meta name="description" content="我感觉虽然现在LLM大发展，但是应用端的软件还不是很完善，特别是一些平时不会注意到但很核心的功能。
+比如AI聊天客户端——就拿Cherry Studio来说吧——在第一轮对话中，模型调用MCP工具获得一些内容，然后输出回答。紧接着第二轮对话中，Cherry Studio就会丢弃第一轮中MCP工具获取的内容，只发送用户的问题和模型的回答作为上下文。这就会导致从第二轮对话开始，每一轮对话都可能缺失完整的上下文，从而有效信息越来越少，最后自说自话。
+">
+
+<link rel="canonical" href="https://qingshuige.ink/blog/ai%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E4%B8%8A%E4%B8%8B%E6%96%87%E9%97%AE%E9%A2%98/">
+
+<link rel="stylesheet" href="/assets/qingshuige.1f39c2f793dfc658ae5e45e28d9186b4e01c76e0ed9b5c42a8040048381843cf.css" integrity="sha256-HznC95PfxliuXkXijZGGtOAcduDtm1xCqAQASDgYQ88=" crossorigin="anonymous"><link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+  integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+  crossorigin="anonymous"
+>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+  integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+  crossorigin="anonymous"
+></script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof renderMathInElement !== "function") {
+      return
+    }
+
+    const contentAreas = document.querySelectorAll(".prose")
+
+    contentAreas.forEach((content) => {
+
+      renderMathInElement(content, {
+
+        delimiters: [
+          {
+            left: "$$",
+            right: "$$",
+            display: true
+          },
+          {
+            left: "$",
+            right: "$",
+            display: false
+          },
+          {
+            left: "\\(",
+            right: "\\)",
+            display: false
+          },
+          {
+            left: "\\[",
+            right: "\\]",
+            display: true
+          }
+        ],
+
+        ignoredTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code",
+          "option"
+        ],
+
+        throwOnError: false
+
+      })
+
+    })
+
+  })
+</script>
+
+</head>
+<body class="site-shell page-kind-page section-blog">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-brand" href="/" aria-label="返回清水阁首页">
+      <span class="site-brand__logo-slot" aria-hidden="true"><img class="site-brand__logo" src="/favicon.png" alt="" width="36" height="36"></span>
+      <span class="site-brand__text">清水阁</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主导航" data-site-nav>
+  <ul class="site-nav__list"><li class="site-nav__item site-nav__item--has-children"><button
+        class="site-nav__link site-nav__trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="qsg-menu-categories"
+        data-menu-trigger
+        data-menu-current="true"
+      >
+        <span>文章分类</span>
+        <svg class="site-nav__chevron" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="site-nav__submenu" id="qsg-menu-categories" data-menu-submenu><li class="site-nav__item"><a class="site-nav__link" href="/blog/" aria-current="page">全部文章</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%AF%97/">诗</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E6%96%87/">文</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%89%BA/">艺</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%AD%A6/">学</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul></li><li class="site-nav__item"><button class="site-nav__link site-nav__placeholder" type="button" title="撰文指南（待开发）" aria-label="撰文指南，待开发">
+        撰文指南
+      </button></li><li class="site-nav__item"><a class="site-nav__link" href="/blog/%E5%BB%BA%E7%AB%99%E5%BC%81%E8%A8%80/">建站弁言</a></li><li class="site-nav__item"><a class="site-nav__link" href="/almanac/2025/">年鉴2025</a></li><li class="site-nav__item site-nav__item--avatar"><button class="site-nav__avatar-link site-nav__placeholder" type="button" title="个人主页（待开发）" aria-label="个人主页，待开发">
+          <img class="site-nav__avatar" src="/qingshuige/defaults/avatar.png" alt="" width="36" height="36">
+        </button></li><li class="site-nav__item"><button class="qsg-search-trigger" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg></button></li></ul>
+</nav>
+  </div>
+</header>
+
+
+  <main id="main-content" class="site-main">
+    
+
+<article class="site-container article-single article-single--blog">
+
+  <header class="article-header">
+
+    
+<nav class="article-categories" aria-label="文章分类">
+    <a
+      class="article-category"
+      href="/categories/%E5%AD%A6/"
+      rel="tag"
+    >
+      学
+    </a>
+</nav>
+
+
+    <h1 class="article-title">
+      AI客户端的上下文问题
+    </h1>
+
+    <div class="article-meta">
+    <span class="article-meta__author">
+      线粒体
+    </span>
+    <time
+      class="article-meta__date"
+      datetime="2026-06-18T03:12:00&#43;08:00"
+    >
+      2026-06-18
+    </time>
+    <span class="article-meta__reading-time">
+      约 2 分钟阅读
+    </span>
+
+</div>
+
+
+  </header>
+  
+  
+
+  <div class="prose article-content">
+    <p>我感觉虽然现在LLM大发展，但是应用端的软件还不是很完善，特别是一些平时不会注意到但很核心的功能。</p>
+<p>比如AI聊天客户端——就拿Cherry Studio来说吧——在第一轮对话中，模型调用MCP工具获得一些内容，然后输出回答。紧接着第二轮对话中，Cherry Studio就会丢弃第一轮中MCP工具获取的内容，只发送用户的问题和模型的回答作为上下文。这就会导致从第二轮对话开始，每一轮对话都可能缺失完整的上下文，从而有效信息越来越少，最后自说自话。</p>
+<p>我们对于客户端的期望是，能够尽可能长时间多轮次工作而不丢失回答质量。显然这样的策略并没有落实到Cherry Studio中。</p>
+<p>我想出来的一个很不雅的解决方法是：在所有MCP服务器前面挂一个透明代理，每次调用工具的时候，都把工具的返回缓存到本地文件。再在客户端上挂一个脚本，每轮对话都自动读取缓存的文件，作为上下文一并上传。这样能勉强解决问题，但是治标不治本。其本在于，目前的客户端没有一个比较统一的上下文处理策略。各家客户端处理上下文的方式都不怎么公开透明，什么时候压缩，什么时候裁切，都无法精细控制。这方面做得比较好的是Codex CLI和Claude Code——它也不敢做得不好，因为服务的是开发者，代码上下文要是随意裁掉，是要出大问题的。但是普通用户用这些工具问问题，就给人一种很奇怪的感觉。我们用Cherry Studio的原因，就是因为它支持的提供商多，GUI比较方便，上传文件、配置MCP什么的也比较直观。结果它在上下文这个要命的问题上出了岔子，那地位就很尴尬了。</p>
+<p>总之，现有的AI客户端都处于一种各自为政的状态。毕竟LLM的接口才刚基本统一没多长时间，各种协议也还在野蛮生长期，只能等待社区和开发者的贡献了。或许有机会的话，我也可以贡献一点点。</p>
+
+  </div>
+
+  <footer class="article-footer">
+    
+
+    <nav class="article-navigation" aria-label="文章导航">
+
+      
+
+      
+
+      <div class="article-navigation__posts">
+
+        <div class="article-navigation__previous">
+
+        </div>
+
+
+        <div class="article-navigation__next">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/agent%E6%98%AF%E4%B8%80%E4%BA%9B%E4%BA%BA%E7%9A%84%E5%BC%A5%E8%B5%9B%E4%BA%9A/"
+              rel="next"
+            >
+
+              <span class="article-navigation__label">
+                下一篇 →
+              </span>
+
+              <span class="article-navigation__title">
+                Agent是一些人的弥赛亚
+              </span>
+
+            </a>
+
+        </div>
+
+      </div>
+
+
+    <div class="article-navigation__back">
+
+      <a href="/categories/%E5%AD%A6/">
+        返回「学」
+      </a>
+
+    </div>
+
+</nav>
+
+  </footer>
+
+</article>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>© 2026 清水阁</p>
+  </div>
+</footer>
+
+  <script defer src="/js/menu.323881ab00806207b47fbff37467f1e3e39190c2e57cc79d162ce6e050897d93.js" integrity="sha256-MjiBqwCAYge0f7/zdGfx4&#43;ORkMLlfMedFizm4FCJfZM=" crossorigin="anonymous"></script><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.c70c5027c0cb6f4970d2ad23fed658dc691c2c9d0fb45f00096df27129e675ef.js" integrity="sha256-xwxQJ8DLb0lw0q0j/tZY3GkcLJ0PtF8ACW3ycSnmde8=" crossorigin="anonymous"></script>
+</body>
+</html>

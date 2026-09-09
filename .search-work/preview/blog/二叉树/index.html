@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><title>二叉树 · 清水阁</title><meta name="description" content="2015年左右，三年级的我第一次见到了代码。那时候见到了一位正在上大学的姐姐的Visual Basic作业，本身就对电脑很感兴趣的我，很快就被吸引了。我在她的电脑上乱敲键盘，打出一大堆乱码，说这就是我的代码。她还夸我很厉害。
+">
+
+<link rel="canonical" href="https://qingshuige.ink/blog/%E4%BA%8C%E5%8F%89%E6%A0%91/">
+
+<link rel="stylesheet" href="/assets/qingshuige.1f39c2f793dfc658ae5e45e28d9186b4e01c76e0ed9b5c42a8040048381843cf.css" integrity="sha256-HznC95PfxliuXkXijZGGtOAcduDtm1xCqAQASDgYQ88=" crossorigin="anonymous"><link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+  integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+  crossorigin="anonymous"
+>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+  integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+  crossorigin="anonymous"
+></script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof renderMathInElement !== "function") {
+      return
+    }
+
+    const contentAreas = document.querySelectorAll(".prose")
+
+    contentAreas.forEach((content) => {
+
+      renderMathInElement(content, {
+
+        delimiters: [
+          {
+            left: "$$",
+            right: "$$",
+            display: true
+          },
+          {
+            left: "$",
+            right: "$",
+            display: false
+          },
+          {
+            left: "\\(",
+            right: "\\)",
+            display: false
+          },
+          {
+            left: "\\[",
+            right: "\\]",
+            display: true
+          }
+        ],
+
+        ignoredTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code",
+          "option"
+        ],
+
+        throwOnError: false
+
+      })
+
+    })
+
+  })
+</script>
+
+</head>
+<body class="site-shell page-kind-page section-blog">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-brand" href="/" aria-label="返回清水阁首页">
+      <span class="site-brand__logo-slot" aria-hidden="true"><img class="site-brand__logo" src="/favicon.png" alt="" width="36" height="36"></span>
+      <span class="site-brand__text">清水阁</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主导航" data-site-nav>
+  <ul class="site-nav__list"><li class="site-nav__item site-nav__item--has-children"><button
+        class="site-nav__link site-nav__trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="qsg-menu-categories"
+        data-menu-trigger
+        data-menu-current="true"
+      >
+        <span>文章分类</span>
+        <svg class="site-nav__chevron" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="site-nav__submenu" id="qsg-menu-categories" data-menu-submenu><li class="site-nav__item"><a class="site-nav__link" href="/blog/" aria-current="page">全部文章</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%AF%97/">诗</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E6%96%87/">文</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%89%BA/">艺</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%AD%A6/">学</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul></li><li class="site-nav__item"><button class="site-nav__link site-nav__placeholder" type="button" title="撰文指南（待开发）" aria-label="撰文指南，待开发">
+        撰文指南
+      </button></li><li class="site-nav__item"><a class="site-nav__link" href="/blog/%E5%BB%BA%E7%AB%99%E5%BC%81%E8%A8%80/">建站弁言</a></li><li class="site-nav__item"><a class="site-nav__link" href="/almanac/2025/">年鉴2025</a></li><li class="site-nav__item site-nav__item--avatar"><button class="site-nav__avatar-link site-nav__placeholder" type="button" title="个人主页（待开发）" aria-label="个人主页，待开发">
+          <img class="site-nav__avatar" src="/qingshuige/defaults/avatar.png" alt="" width="36" height="36">
+        </button></li><li class="site-nav__item"><button class="qsg-search-trigger" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg></button></li></ul>
+</nav>
+  </div>
+</header>
+
+
+  <main id="main-content" class="site-main">
+    
+
+<article class="site-container article-single article-single--blog">
+
+  <header class="article-header">
+
+    
+<nav class="article-categories" aria-label="文章分类">
+    <a
+      class="article-category"
+      href="/categories/%E6%96%87/"
+      rel="tag"
+    >
+      文
+    </a>
+</nav>
+
+
+    <h1 class="article-title">
+      二叉树
+    </h1>
+
+    <div class="article-meta">
+    <span class="article-meta__author">
+      线粒体
+    </span>
+    <time
+      class="article-meta__date"
+      datetime="2026-03-27T11:27:00&#43;08:00"
+    >
+      2026-03-27
+    </time>
+    <span class="article-meta__reading-time">
+      约 3 分钟阅读
+    </span>
+
+</div>
+
+
+  </header>
+  
+  
+
+  <div class="prose article-content">
+    <p>2015年左右，三年级的我第一次见到了代码。那时候见到了一位正在上大学的姐姐的Visual Basic作业，本身就对电脑很感兴趣的我，很快就被吸引了。我在她的电脑上乱敲键盘，打出一大堆乱码，说这就是我的代码。她还夸我很厉害。</p>
+<p>2017年，我第一次学编程。我的第一门编程语言是C，第一本编程书是谭浩强。我每天看一点点，写一点点。为什么函数要先声明再实现？这是在编程中困扰我的第一个重大问题。我花了两个月的时间，才理解函数的声明和函数的实现是分离的，后来我才知道这个叫封装。</p>
+<p>我用<code>stdio</code>写了一些命令行程序。那时候不知道用代码编辑器，而是用记事本写代码。</p>
+<p>很快我就觉得命令行不是我想要的，我想要炫酷的GUI。于是我的第二门语言是VB，那时候我觉得VB就是写GUI最好的语言。但是一开始我完全没有理解面向对象，不知道什么叫实例。所以我又开始啃VB的书。不过这一次比学C快多了，不到半个月我就能用VB写程序了，而且还用上了Visual Studio。</p>
+<p>但是我的VB生涯只持续了很短的时间，一个原因是这门语言本身不太流行，框架也很少。于是我的第三门语言是Java，看的书是臭名昭著的《从入门到精通》。这样一本烂书却让我学会了Java大部分的基础知识。现在人们学Java可能是为了做互联网开发，但那时候，我从C学到Java，乃至后面的C#，都没有对互联网开发展现出任何兴趣，更不懂什么SaaS，只是一心想做一个“买断制产品”。所以我对桌面软件非常感兴趣，也可以说是我的技能树点歪了。</p>
+<p>我学做Java Swing，用<code>Thread</code>手搓动画，做了一个工具箱软件。这是我的第一个称得上“作品”的项目，总共有三千多行。但后来我换了电脑，一行都没有保存下来。年轻人总觉得自己将来有无限可能，有谁不把过去通通抛在脑后呢？</p>
+<p>当我觉得Java也不过瘾的时候，我开始学C#，做Unity 3D。从Java转C#并不需要多少成本，倒是把大部分时间都放在了研究U3D上。我做了一个小游戏。此外还学WinForms，做了一个文本编辑器，还在省级比赛上获了一等奖。</p>
+<p>以上都是2017到2018年间发生的事，这两年我完成了我迄今所用几乎所有技术的原始积累。可惜的是，2018年开始直到2025年，7年间，我没有学习任何一门新语言，Android和WPF的学习也无疾而终。</p>
+<p>2022年，我做出了我人生中一个极为不妥的决定：转到文科班。在2022年以前，我从没想过有一天我会去学文科，我一直以为自己是个纯正的理科生。但是人在环境极度压抑的情况下会做出一些极端的决定，我只是为了赌气，或者说想逃离那个班级环境，就让我的理想和前途大打折扣。</p>
+<p>同年的某一天，一位老师给我一份资料，问我要不要去参加信竞。那时候我只觉得数竞、化竞、生竞才是“正规竞赛”，对信竞并不上心，便敷衍过去。</p>
+<p>后来上了大学，才发现大量CS领域的大佬都是信竞出身，有些甚至从小学开始到高中，一直参加信竞。</p>
+<p>而我自小学毕业到高考的6年内，再也没有2017年那样深入钻研过编程。</p>
+<p>而我在2025一年间学到的编程知识，却比我过去人生中所学的总和还要多。</p>
+<p>当我今天只能通过考研来进入这个自幼向往的行业时，不禁回想起十年前独自啃书本写代码的那些时光。</p>
+<p>种一棵树最好的时间是十年前，其次是现在。</p>
+
+  </div>
+
+  <footer class="article-footer">
+    
+
+    <nav class="article-navigation" aria-label="文章导航">
+
+      
+
+      
+
+      <div class="article-navigation__posts">
+
+        <div class="article-navigation__previous">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E5%9B%BD%E8%B5%9B%E7%B2%89%E5%A2%A8%E7%99%BB%E5%9C%BA/"
+              rel="prev"
+            >
+
+              <span class="article-navigation__label">
+                ← 上一篇
+              </span>
+
+              <span class="article-navigation__title">
+                国赛，粉墨登场
+              </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="article-navigation__next">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E6%80%80%E5%BF%B5%E6%9D%8E%E5%AE%97%E5%B9%B3%E8%80%81%E5%B8%88/"
+              rel="next"
+            >
+
+              <span class="article-navigation__label">
+                下一篇 →
+              </span>
+
+              <span class="article-navigation__title">
+                怀念李宗平老师
+              </span>
+
+            </a>
+
+        </div>
+
+      </div>
+
+
+    <div class="article-navigation__back">
+
+      <a href="/categories/%E6%96%87/">
+        返回「文」
+      </a>
+
+    </div>
+
+</nav>
+
+  </footer>
+
+</article>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>© 2026 清水阁</p>
+  </div>
+</footer>
+
+  <script defer src="/js/menu.323881ab00806207b47fbff37467f1e3e39190c2e57cc79d162ce6e050897d93.js" integrity="sha256-MjiBqwCAYge0f7/zdGfx4&#43;ORkMLlfMedFizm4FCJfZM=" crossorigin="anonymous"></script><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.c70c5027c0cb6f4970d2ad23fed658dc691c2c9d0fb45f00096df27129e675ef.js" integrity="sha256-xwxQJ8DLb0lw0q0j/tZY3GkcLJ0PtF8ACW3ycSnmde8=" crossorigin="anonymous"></script>
+</body>
+</html>

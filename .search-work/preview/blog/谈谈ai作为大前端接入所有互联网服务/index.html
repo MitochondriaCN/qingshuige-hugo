@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light"><title>谈谈AI作为大前端接入所有互联网服务 · 清水阁</title><meta name="description" content="最近，我在阮一峰的博客上看到一个有意思的观点。它说ChatGPT新推出的Operator功能指引出未来互联网发展的一种趋势，即互联网服务提供者将服务做成API，然后让AI大模型访问这些API，统筹资源，实现用户所需的功能。这样一来，服务提供者只需要维护一套后端系统，而用户交互、呈现等功能则可以交由AI统一处理。各个平台之间的垄断将被打破，用户只需要使用AI系统就可以访问一整个互联网服务。
+">
+
+<link rel="canonical" href="https://qingshuige.ink/blog/%E8%B0%88%E8%B0%88ai%E4%BD%9C%E4%B8%BA%E5%A4%A7%E5%89%8D%E7%AB%AF%E6%8E%A5%E5%85%A5%E6%89%80%E6%9C%89%E4%BA%92%E8%81%94%E7%BD%91%E6%9C%8D%E5%8A%A1/">
+
+<link rel="stylesheet" href="/assets/qingshuige.1f39c2f793dfc658ae5e45e28d9186b4e01c76e0ed9b5c42a8040048381843cf.css" integrity="sha256-HznC95PfxliuXkXijZGGtOAcduDtm1xCqAQASDgYQ88=" crossorigin="anonymous"><link rel="stylesheet" href="/qingshuige-search/search.min.51f2ab4e8099f7438c81da70bb8965d3f1d07c9f6924a1d34a113b4539891d16.css" integrity="sha256-UfKrToCZ90OMgdpwu4ll0/HQfJ9pJKHTShE7RTmJHRY=" crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.css"
+  integrity="sha384-Wsr4Nh3yrvMf2KCebJchRJoVo1gTU6kcP05uRSh5NV3sj9+a8IomuJoQzf3sMq4T"
+  crossorigin="anonymous"
+>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/katex.min.js"
+  integrity="sha384-+W9OcrYK2/bD7BmUAk+xeFAyKp0QjyRQUCxeU31dfyTt/FrPsUgaBTLLkVf33qWt"
+  crossorigin="anonymous"
+></script>
+
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.28/dist/contrib/auto-render.min.js"
+  integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+
+    if (typeof renderMathInElement !== "function") {
+      return
+    }
+
+    const contentAreas = document.querySelectorAll(".prose")
+
+    contentAreas.forEach((content) => {
+
+      renderMathInElement(content, {
+
+        delimiters: [
+          {
+            left: "$$",
+            right: "$$",
+            display: true
+          },
+          {
+            left: "$",
+            right: "$",
+            display: false
+          },
+          {
+            left: "\\(",
+            right: "\\)",
+            display: false
+          },
+          {
+            left: "\\[",
+            right: "\\]",
+            display: true
+          }
+        ],
+
+        ignoredTags: [
+          "script",
+          "noscript",
+          "style",
+          "textarea",
+          "pre",
+          "code",
+          "option"
+        ],
+
+        throwOnError: false
+
+      })
+
+    })
+
+  })
+</script>
+
+</head>
+<body class="site-shell page-kind-page section-blog">
+  <a class="skip-link" href="#main-content">跳到正文</a>
+
+  <header class="site-header">
+  <div class="site-container site-header__inner">
+    <a class="site-brand" href="/" aria-label="返回清水阁首页">
+      <span class="site-brand__logo-slot" aria-hidden="true"><img class="site-brand__logo" src="/favicon.png" alt="" width="36" height="36"></span>
+      <span class="site-brand__text">清水阁</span>
+    </a>
+
+    <nav class="site-nav" aria-label="主导航" data-site-nav>
+  <ul class="site-nav__list"><li class="site-nav__item site-nav__item--has-children"><button
+        class="site-nav__link site-nav__trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="qsg-menu-categories"
+        data-menu-trigger
+        data-menu-current="true"
+      >
+        <span>文章分类</span>
+        <svg class="site-nav__chevron" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <ul class="site-nav__submenu" id="qsg-menu-categories" data-menu-submenu><li class="site-nav__item"><a class="site-nav__link" href="/blog/" aria-current="page">全部文章</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%AF%97/">诗</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E6%96%87/">文</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E8%89%BA/">艺</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%AD%A6/">学</a></li><li class="site-nav__item"><a class="site-nav__link" href="/categories/%E5%85%B6%E4%BB%96/">其他</a></li></ul></li><li class="site-nav__item"><button class="site-nav__link site-nav__placeholder" type="button" title="撰文指南（待开发）" aria-label="撰文指南，待开发">
+        撰文指南
+      </button></li><li class="site-nav__item"><a class="site-nav__link" href="/blog/%E5%BB%BA%E7%AB%99%E5%BC%81%E8%A8%80/">建站弁言</a></li><li class="site-nav__item"><a class="site-nav__link" href="/almanac/2025/">年鉴2025</a></li><li class="site-nav__item site-nav__item--avatar"><button class="site-nav__avatar-link site-nav__placeholder" type="button" title="个人主页（待开发）" aria-label="个人主页，待开发">
+          <img class="site-nav__avatar" src="/qingshuige/defaults/avatar.png" alt="" width="36" height="36">
+        </button></li><li class="site-nav__item"><button class="qsg-search-trigger" type="button" data-search-trigger aria-label="搜索文章" aria-haspopup="dialog" aria-controls="qsg-search-dialog" aria-expanded="false" title="搜索（Ctrl/⌘ + K）">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.2 4.2"/></svg></button></li></ul>
+</nav>
+  </div>
+</header>
+
+
+  <main id="main-content" class="site-main">
+    
+
+<article class="site-container article-single article-single--blog">
+
+  <header class="article-header">
+
+    
+<nav class="article-categories" aria-label="文章分类">
+    <a
+      class="article-category"
+      href="/categories/%E5%AD%A6/"
+      rel="tag"
+    >
+      学
+    </a>
+</nav>
+
+
+    <h1 class="article-title">
+      谈谈AI作为大前端接入所有互联网服务
+    </h1>
+
+    <div class="article-meta">
+    <span class="article-meta__author">
+      线粒体
+    </span>
+    <time
+      class="article-meta__date"
+      datetime="2025-03-13T18:09:53&#43;08:00"
+    >
+      2025-03-13
+    </time>
+    <span class="article-meta__reading-time">
+      约 3 分钟阅读
+    </span>
+
+</div>
+
+
+  </header>
+  
+  
+
+  <div class="prose article-content">
+    <p>最近，我在阮一峰的博客上看到一个有意思的观点。它说ChatGPT新推出的Operator功能指引出未来互联网发展的一种趋势，即互联网服务提供者将服务做成API，然后让AI大模型访问这些API，统筹资源，实现用户所需的功能。这样一来，服务提供者只需要维护一套后端系统，而用户交互、呈现等功能则可以交由AI统一处理。各个平台之间的垄断将被打破，用户只需要使用AI系统就可以访问一整个互联网服务。</p>
+<p>比如，对于外卖平台，只需要提供获取商家列表、菜品列表、配送状态等API，由AI完成支付的代理，就可以实现在AI上点外卖。当大量外卖平台接入，大模型对于数据和交互的分析与综合的优势就会充分显现，可以根据用户要求快速准确选择其需要的商品，一条龙完成点外卖操作，完全隐藏其背后的操作逻辑。</p>
+<p>这种理念有两种实现方式：由服务提供商定义API和由AI定义API。</p>
+<p>由AI定义API，由开发者来实现，这种技术的本质并不新鲜。前端统一在技术上早就可以实现，比如我们已经习惯的浏览器，就可以看作一个“前端”，而HTML、CSS、JavaScript等等，就可以看作浏览器定义的“API”。当前的互联网应用，就是这种理念的具体实现。浏览器统一了不同操作系统上的用户呈现；如今的AI大前端，将HTML等实现的用户交互功能削去，改由AI来实现，统一了用户交互。开发者遵循的规范是AI定义的一系列API，确保提供AI所需的数据。然而我认为这样做对开发者的利益是有影响的：API不能提供附加价值，厂商的那些花活怎么搞？广告怎么搞？而且接口的定义一统一，不同厂商的不同付费机制、会员机制乃至功能上的创新就很难实现了。对于功能和模式的控制权将完全掌握在AI厂商手中，开发者容易沦为被动的数据提供者。</p>
+<p>由开发者定义API是一个非常崭新的领域，将颠覆现有的软件开发架构和理念，因为这是AI时代的专利。开发者定义一套API，并附上文档，由AI来自动解析这些API的用法，并生成适合这些API的用户交互。这样一来，开发者不需要受限于AI定义的范围内，可以任意实现自己想要的功能。然而问题出在“解析”上：如何能够保证AI解析的API用法确实符合开发者的本意？需要怎样写文档才能符合AI理解方式？假设AI的解析是有误的，传进来错误的参数，或者传来的数据根本不符合用户需要，这种情况应当怎样处理？这都是很难把握的问题。</p>
+<p>这是我突发奇想产生的不成熟想法，我估测其中至少有70%是错误的。</p>
+
+  </div>
+
+  <footer class="article-footer">
+    
+
+    <nav class="article-navigation" aria-label="文章导航">
+
+      
+
+      
+
+      <div class="article-navigation__posts">
+
+        <div class="article-navigation__previous">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E7%AD%89%E5%B7%AE%E7%AD%89%E6%AF%94%E6%95%B0%E5%88%97%E7%9A%84%E5%AF%B9%E7%A7%B0%E8%AE%A1%E6%95%B0%E5%85%AC%E5%BC%8F/"
+              rel="prev"
+            >
+
+              <span class="article-navigation__label">
+                ← 上一篇
+              </span>
+
+              <span class="article-navigation__title">
+                等差等比数列的对称计数公式
+              </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="article-navigation__next">
+
+            <a
+              class="article-navigation__link"
+              href="/blog/%E5%BD%A2%E5%BC%8F%E4%B8%8A%E7%9A%84%E6%8E%A8%E7%90%86%E4%B8%8D%E8%83%BD%E5%A2%9E%E5%87%8F%E5%86%85%E5%AE%B9%E6%88%96%E5%BD%A2%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%85%B7%E6%9C%89%E8%87%AA%E5%B0%81%E6%80%A7/"
+              rel="next"
+            >
+
+              <span class="article-navigation__label">
+                下一篇 →
+              </span>
+
+              <span class="article-navigation__title">
+                形式上的推理不能增减内容，或形式系统具有自封性
+              </span>
+
+            </a>
+
+        </div>
+
+      </div>
+
+
+    <div class="article-navigation__back">
+
+      <a href="/categories/%E5%AD%A6/">
+        返回「学」
+      </a>
+
+    </div>
+
+</nav>
+
+  </footer>
+
+</article>
+
+
+  </main>
+
+  <footer class="site-footer">
+  <div class="site-container site-footer__inner">
+    <p>© 2026 清水阁</p>
+  </div>
+</footer>
+
+  <script defer src="/js/menu.323881ab00806207b47fbff37467f1e3e39190c2e57cc79d162ce6e050897d93.js" integrity="sha256-MjiBqwCAYge0f7/zdGfx4&#43;ORkMLlfMedFizm4FCJfZM=" crossorigin="anonymous"></script><div data-qsg-search data-search-index-url="/search-index.json" data-search-options="{&#34;maxDocumentFrequencyRatio&#34;:0.6,&#34;maxResults&#34;:20,&#34;snippetLength&#34;:110}" data-search-ui="{&#34;debounceMs&#34;:120}"></div><script type="module" src="/qingshuige-search/qingshuige-search.c70c5027c0cb6f4970d2ad23fed658dc691c2c9d0fb45f00096df27129e675ef.js" integrity="sha256-xwxQJ8DLb0lw0q0j/tZY3GkcLJ0PtF8ACW3ycSnmde8=" crossorigin="anonymous"></script>
+</body>
+</html>

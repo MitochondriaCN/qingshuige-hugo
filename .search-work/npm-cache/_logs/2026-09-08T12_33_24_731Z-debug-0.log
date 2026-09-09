@@ -1,0 +1,20 @@
+0 verbose cli D:\Node.js\node.exe D:\Node.js\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.13.0
+2 info using node@v24.16.0
+3 silly config load:file:D:\Node.js\node_modules\npm\npmrc
+4 silly config load:file:D:\qingshuige\qingshuige-hugo\plugins\qingshuige-search\.npmrc
+5 silly config load:file:C:\Users\25845\.npmrc
+6 silly config load:file:C:\Users\25845\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm pack
+8 verbose argv "pack" "--dry-run" "--json" "--cache" "D:/qingshuige/qingshuige-hugo/.search-work/npm-cache"
+9 verbose logfile logs-max:10 dir:D:\qingshuige\qingshuige-hugo\.search-work\npm-cache\_logs\2026-09-08T12_33_24_731Z-
+10 verbose logfile D:\qingshuige\qingshuige-hugo\.search-work\npm-cache\_logs\2026-09-08T12_33_24_731Z-debug-0.log
+11 silly logfile done cleaning log files
+12 http fetch GET https://registry.npmmirror.com/npm attempt 1 failed with EACCES
+13 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+14 verbose cwd D:\qingshuige\qingshuige-hugo\plugins\qingshuige-search
+15 verbose os Windows_NT 10.0.26200
+16 verbose node v24.16.0
+17 verbose npm  v11.13.0
+18 verbose exit 0
+19 info ok

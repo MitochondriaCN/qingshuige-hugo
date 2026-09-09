@@ -1,0 +1,37 @@
+backend:
+  name: gitea
+  repo: qingshuige-authors/qingshuige-hugo
+  app_id: 2ad8d5ac-e736-42a8-8913-8d91d019397a
+  api_root: "https://gitea.qingshuige.ink/api/v1/"
+  base_url: "https://gitea.qingshuige.ink/"
+  auth_endpoint: "https://gitea.qingshuige.ink/login/oauth/authorize"
+  branch: main
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "文章"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "日期", name: "date", widget: "datetime" }
+      - {
+          label: "作者",
+          name: "author",
+          widget: "select",
+          options:
+            [
+              "线粒体",
+              "南木",
+              "刁钻神",
+              "猕猴桃教教主",
+              "aspaticopia",
+              "文默居士",
+              "NukaCirno"
+            ],
+          default: "线粒体",
+        }
+      - { label: "正文", name: "body", widget: "markdown" }

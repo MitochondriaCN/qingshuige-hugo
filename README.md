@@ -10,11 +10,11 @@
 
 ## 技术栈
 
-采用极其先进的[Hugo](https://gohugo.io/)和极其美观的[PaperMod](https://github.com/adityatelange/hugo-PaperMod/)！
+采用极其先进的[Hugo](https://gohugo.io/)和极其美观的[Qingshuige Theme](https://github.com/nanmuweyyyyyy/qingshuige-theme)！
 
 ## 独立搜索插件
 
-搜索由 [qingshuige-search](https://github.com/nanmuweyyyyyy/qingshuige-search) 子模块提供，路径为 `plugins/qingshuige-search`。该仓库目前为私有，克隆需要对应 GitHub 访问权限。
+搜索由 [qingshuige-search](https://github.com/nanmuweyyyyyy/qingshuige-search) 子模块提供。
 
 ```sh
 git submodule update --init --recursive

@@ -113,12 +113,10 @@ menus:
        pageRef: "/author"
        weight: 15
 
-    # 目前主站还没有“撰文指南”内容页，因此先作为待开发交互项显示。
      - identifier: writing_guide
        name: "撰文指南"
+       pageRef: "/writing-guide"
        weight: 20
-       params:
-        placeholder: true
 
      - identifier: site_preface
        name: "建站弁言"

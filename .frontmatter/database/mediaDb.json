@@ -1,5 +1,12 @@
 {
   "static": {
-    "files": {}
+    "files": {},
+    "uploads": {
+      "windows-opening-terminal.png": {
+        "alt": "",
+        "caption": "",
+        "title": ""
+      }
+    }
   }
 }

@@ -129,15 +129,6 @@ menus:
        weight: 40
 
 
-    # 个人主页用头像代替文字。等目标地址确定后，删除 placeholder，
-    # 并添加 pageRef（站内页面）或 url（站外个人主页）。
-     - identifier: profile
-       name: "个人主页"
-       weight: 50
-       params:
-        avatar: true
-        placeholder: true
-
 module:
   mounts:
   # Explicit mounts preserve the site's own assets and layouts.

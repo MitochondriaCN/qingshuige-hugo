@@ -49,6 +49,19 @@ params:
   ShowPostNavLinks: true
   math: true
 
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['$$', '$$']
+            - ['\[', '\]']
+          inline:
+            - ['$', '$']
+            - ['\(', '\)']
+
 taxonomies:
   author: author
   tag: tags
